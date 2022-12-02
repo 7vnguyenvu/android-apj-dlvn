@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/button_background.xml" value="0.1355" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/edittext_background.xml" value="0.1355" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/login_gg_background.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
