@@ -15,12 +15,22 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        findViewById(R.id.tTitle_Login).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.bSkip_Login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent main = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(main);
             }
         });
+
+
+
+                /*.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(main);
+            }
+        });*/
     }
 }

@@ -7,9 +7,25 @@
     android:background="#000"
     tools:context=".LoginActivity">
 
+    <LinearLayout
+        android:gravity="right"
+        >
+        <Button
+            android:id="@+id/bSkip_Login"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="#00FFFFFF"
+            android:text="Skip"
+            android:textAllCaps="false"
+            android:textColor="#00CA08"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tTitle_Login"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="80dp"
         android:gravity="center_horizontal"
         android:text="TRAVEL ME"
         android:textColor="#fff"
@@ -84,7 +100,7 @@
     </LinearLayout>
 
 
-    <!--<LinearLayout
+    <LinearLayout
         android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
         >
@@ -93,7 +109,7 @@
             android:layout_marginRight="12dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:srcCompat="@mipmap/facebook"
+            android:src="@mipmap/facebook"
             android:background="@drawable/login_gg_background"
             tools:ignore="HardcodedText,InefficientWeight" />
 
@@ -101,11 +117,11 @@
             android:layout_marginLeft="12dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:srcCompat="@mipmap/google"
+            android:src="@mipmap/google"
             android:background="@drawable/login_gg_background"
             tools:ignore="HardcodedText,InefficientWeight" />
 
-    </LinearLayout>-->
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
         android:paddingHorizontal="16dp"
