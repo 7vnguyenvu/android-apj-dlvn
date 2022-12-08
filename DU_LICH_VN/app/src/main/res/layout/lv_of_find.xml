@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/txtTen"
             android:layout_width="match_parent"
-            android:layout_height="70"
+            android:layout_height="48dp"
             android:text="TextView" />
 
         <TextView
