@@ -93,7 +93,7 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
                 FragmentManager fragmentManager_User = getActivity().getSupportFragmentManager();
                 fragmentManager_User
                         .beginTransaction()
-                        .replace(R.id.PageContainer, UserFragment.newInstance())
+                        .replace(R.id.PageContainer, UserFragment.newInstance("Admin", "Admin_depzai"))
                         .commit();
 
                 iS.getLayoutParams().height = 55;

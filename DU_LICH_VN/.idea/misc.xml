@@ -7,6 +7,7 @@
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/button_background.xml" value="0.1355" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/edittext_background.xml" value="0.1355" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/image_user_background.xml" value="0.125" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/login_gg_background.xml" value="0.18" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/tablecontrol_background.xml" value="0.1" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_login.xml" value="0.264" />
@@ -16,6 +17,8 @@
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_explore.xml" value="0.1453804347826087" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_find.xml" value="0.1453804347826087" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user.xml" value="0.25" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user__false.xml" value="0.4" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user__true.xml" value="0.264" />
         <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18" />
       </map>
     </option>
