@@ -15,6 +15,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         findViewById(R.id.bSkip_Login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
