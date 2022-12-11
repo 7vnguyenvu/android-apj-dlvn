@@ -36,4 +36,6 @@ public class FindFrag_Location implements Serializable {
         this.name = name;
         this.mota = mota;
     }
+
+
 }

@@ -19,12 +19,6 @@ public class LocationAdapter extends ArrayAdapter<FindFrag_Location> {
     private Context contxt;
     private ArrayList<FindFrag_Location> arr;
     private int res;
-//    public LocationAdapter(@NonNull Context context, int resource, FindFragment contxt, ArrayList<FindFrag_Location> arr) {
-//        super(context, resource);
-//        this.contxt = contxt;
-//        this.arr = arr;
-//    }
-
 
     public LocationAdapter(@NonNull Context context,int resour,ArrayList<FindFrag_Location> ArrLocation) {
         super(context,R.layout.lv_of_find,ArrLocation);
