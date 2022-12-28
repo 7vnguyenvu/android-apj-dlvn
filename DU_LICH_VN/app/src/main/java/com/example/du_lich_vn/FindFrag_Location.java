@@ -3,9 +3,9 @@ package com.example.du_lich_vn;
 import java.io.Serializable;
 
 public class FindFrag_Location implements Serializable {
-    int img;
-    String name;
-    String mota;
+    private int img;
+    private String name;
+   private String mota;
 
     public int getImg() {
         return img;

@@ -12,17 +12,12 @@
         android:padding="24dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
+        <SearchView
+            android:id="@+id/Search_location"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:ems="10"
-            android:hint="Tìm kiếm"
-            android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="10dp"
-            android:inputType="textPersonName"
-            android:text="" />
-
+            android:queryHint="Search...."
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
