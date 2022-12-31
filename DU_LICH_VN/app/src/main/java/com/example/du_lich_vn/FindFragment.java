@@ -15,8 +15,7 @@ public class FindFragment extends Fragment {
     }
 
     public static FindFragment newInstance() {
-        FindFragment fragment = new FindFragment();
-        return fragment;
+        return new FindFragment();
     }
 
     @Override

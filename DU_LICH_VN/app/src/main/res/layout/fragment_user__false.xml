@@ -7,6 +7,7 @@
     tools:context=".UserFragment_False">
 
     <Button
+        android:id="@+id/bSignin_UserFalse"
         android:background="@drawable/button_background"
         android:textColor="#006604"
         android:layout_marginRight="12dp"
@@ -19,6 +20,7 @@
         />
 
     <Button
+        android:id="@+id/bSignup_UserFalse"
         android:background="@drawable/button_background"
         android:textColor="#530066"
         android:layout_marginLeft="12dp"

@@ -35,6 +35,7 @@ public class UserFragment extends Fragment {
     }
 
     private String user;
+    private String password;
 
     public UserFragment(String user, String password) {
         this.setUser(user);
@@ -47,7 +48,6 @@ public class UserFragment extends Fragment {
         this.password = password;
     }
 
-    private String password;
 
     public UserFragment() {
         // Required empty public constructor
@@ -79,7 +79,7 @@ public class UserFragment extends Fragment {
 
     public boolean CheckAccount() {
 
-        if (getUser() == "Admin" && getPassword() == "Admin_depzai")
+        if (getUser().equals("Admin") && getPassword().equals("Admin_depzai"))
             return true;
         return false;
     }

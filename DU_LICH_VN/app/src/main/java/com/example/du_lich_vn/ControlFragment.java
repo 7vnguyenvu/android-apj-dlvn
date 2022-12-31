@@ -1,6 +1,11 @@
 package com.example.du_lich_vn;
 
+import static android.content.Context.MODE_PRIVATE;
+import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
+
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.File;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,18 +30,23 @@ import android.widget.TextView;
  */
 public class ControlFragment extends Fragment implements View.OnClickListener {
 
+    Context _ThisContext;
+    View _View;
+    private MainActivity _MainActivity;
+
     public ControlFragment() {
         // Required empty public constructor
     }
 
     public static ControlFragment newInstance() {
-        ControlFragment fragment = new ControlFragment();
-        return fragment;
+        return new ControlFragment();
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     ImageView iS, iE, iU;
@@ -41,6 +54,9 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        _ThisContext = view.getContext();
+
         iS = view.findViewById(R.id.iSearch_Ctrl);
         iE = view.findViewById(R.id.iExplore_Ctrl);
         iU = view.findViewById(R.id.iUser_Ctrl);
@@ -90,10 +106,13 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
 
             case R.id.iUser_Ctrl:
 
+                String un = _MainActivity.getUser_name();
+                String pw = _MainActivity.getPass();
+
                 FragmentManager fragmentManager_User = getActivity().getSupportFragmentManager();
                 fragmentManager_User
                         .beginTransaction()
-                        .replace(R.id.PageContainer, UserFragment.newInstance("Admin", "Admin_depzai"))
+                        .replace(R.id.PageContainer, UserFragment.newInstance(un, pw))
                         .commit();
 
                 iS.getLayoutParams().height = 55;
@@ -108,6 +127,8 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_control, container, false);
+        _View = inflater.inflate(R.layout.fragment_control, container, false);
+        _MainActivity = (MainActivity) getActivity();
+        return _View;
     }
 }
