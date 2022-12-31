@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="24dp"
         android:text="Tên địa điểm" />
 
@@ -20,7 +22,9 @@
         android:layout_height="300dp"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <WebView
+    <ListView
+        android:id="@+id/manyLocation"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>
