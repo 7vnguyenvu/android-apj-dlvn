@@ -63,10 +63,16 @@ public class UserFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         FragmentManager fragmentManager_Search = getActivity().getSupportFragmentManager();
-        if (CheckAccount()) {
+        if (CheckAccount() == 1) {
             fragmentManager_Search
                     .beginTransaction()
-                    .replace(R.id.UserContainer, UserFragment_True.newInstance())
+                    .replace(R.id.UserContainer, UserFragment_True.newInstance(1))
+                    .commit();
+        }
+        else if (CheckAccount() == 2) {
+            fragmentManager_Search
+                    .beginTransaction()
+                    .replace(R.id.UserContainer, UserFragment_True.newInstance(2))
                     .commit();
         }
         else {
@@ -77,11 +83,13 @@ public class UserFragment extends Fragment {
         }
     }
 
-    public boolean CheckAccount() {
+    public int CheckAccount() {
 
-        if (getUser().equals("Admin") && getPassword().equals("Admin_depzai"))
-            return true;
-        return false;
+        if (getUser().equals("7V_Admin") && getPassword().equals("Admin_depzai"))
+            return 1;
+        if (getUser().equals("HT_Admin") && getPassword().equals("Admin_depzai"))
+            return 2;
+        return 0;
     }
 
     @Override

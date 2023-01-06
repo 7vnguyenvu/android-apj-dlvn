@@ -9,11 +9,58 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 public class LoginActivity extends Activity {
 
     SQLiteDatabase database;
-    Cursor cursor;
+    Cursor curAccount, curPlace;
     EditText eAccount_Login, ePassword_Login;
+    ArrayList<Place> places = new ArrayList<Place>();
+
+    public void CreateDB() {
+        database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
+        String sql = "CREATE TABLE PLACES (PLACE_CODE TEXT PRIMARY KEY, PLACE_NAME TEXT, DESCRIPTION TEXT, RATING TEXT, PROVINCE TEXT, POSITION TEXT)";
+        database.execSQL(sql);
+        sql = "CREATE TABLE ACCOUNTS (_ID TEXT PRIMARY KEY, USER_NAME TEXT, PASSWORD TEXT)";
+        database.execSQL(sql);
+
+        // INSERT VALUES - PLACES
+        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M5C7X6', 'Vạn Hương Mai', 'Công ty Du lịch Vạn Hương Mai', '4.0 (1236 review)', 'Châu Đốc, An Giang', 'M5C7+X6')";
+        database.execSQL(sql);
+        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M3JJR4', 'Miếu Bà Chúa Xứ Núi Sam', 'Chùa Bà Châu Đốc', '4.6 (299 review)', 'Châu Đốc, An Giang', 'M3JJ+R4')";
+        database.execSQL(sql);
+
+        // INSERT VALUES - ACCOUNTS
+        sql = "INSERT INTO ACCOUNTS (_ID, USER_NAME, PASSWORD) VALUES ('777', '7V_Admin', 'Admin_depzai')";
+        database.execSQL(sql);
+        sql = "INSERT INTO ACCOUNTS (_ID, USER_NAME, PASSWORD) VALUES ('888', 'HT_Admin', 'Admin_depzai')";
+        database.execSQL(sql);
+
+        System.out.println("Đã tạo Database.");
+    }
+
+
+    public void OpenDB() {
+        database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
+        System.out.println("Database đã tồn tại. => Đã mở Databse.");
+        curAccount = database.query("ACCOUNTS", null, null, null, null, null, null);
+        System.out.println("Truy vấn ACCOUNTS thành công.");
+        curPlace = database.query("PLACES", null, null, null, null, null, null);
+        System.out.println("Truy vấn PLACES thành công.");
+
+        curPlace.moveToFirst();
+        while (!curPlace.isAfterLast()) {
+            places.add(new Place(R.drawable.ic_image, curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5)));
+            curPlace.moveToNext();
+        }
+
+        if (curPlace.isAfterLast())
+            System.out.println("Lấy danh sách Places thành công.");
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,24 +69,11 @@ public class LoginActivity extends Activity {
 
         try {
             if (!this.getDatabasePath("Database.db").exists()) {
-
-                database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
-                String sql = "CREATE TABLE PLACES (PLACE_CODE TEXT PRIMARY KEY, PLACE_NAME TEXT, DISCRIPTION TEXT, POSITION TEXT)";
-                database.execSQL(sql);
-                sql = "CREATE TABLE ACCOUNT (_ID TEXT PRIMARY KEY, USER_NAME TEXT, PASSWORD TEXT)";
-                database.execSQL(sql);
-                sql = "INSERT INTO ACCOUNT (_ID, USER_NAME, PASSWORD) VALUES ('777', 'Admin', 'Admin_depzai')";
-                database.execSQL(sql);
-
-                System.out.println("Đã tạo Database.");
+                CreateDB();
+                OpenDB();
             }
             else {
-
-                database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
-                System.out.println("Đã mở Databse.");
-                cursor = database.query("ACCOUNT", null, null, null, null, null, null);
-                System.out.println("Truy vẫn ACCOUNT thành công.");
-
+                OpenDB();
             }
         } catch (Exception ignored) {}
 
@@ -52,6 +86,7 @@ public class LoginActivity extends Activity {
             Intent main = new Intent(LoginActivity.this, MainActivity.class);
             main.putExtra("user_name", "");
             main.putExtra("pass", "");
+            main.putExtra("places", places);
             startActivity(main);
         });
 
@@ -62,29 +97,30 @@ public class LoginActivity extends Activity {
             }
             else {
 
-                cursor.moveToFirst();
+                curAccount.moveToFirst();
                 System.out.println("Đã đặt con trỏ tại đối tượng đầu tiên");
 
-                while (!cursor.isAfterLast()){
+                while (!curAccount.isAfterLast()){
                     if (
-                            eAccount_Login.getText().toString().trim().equals(cursor.getString(1).trim()) &&
-                            ePassword_Login.getText().toString().trim().equals(cursor.getString(2).trim())
+                            eAccount_Login.getText().toString().trim().equals(curAccount.getString(1).trim()) &&
+                            ePassword_Login.getText().toString().trim().equals(curAccount.getString(2).trim())
                     ) {
 //                        String user = "";
 //                        user = cursor.getString(1) + " - " + cursor.getString(2);
 //                        Toast.makeText(LoginActivity.this, user, Toast.LENGTH_SHORT).show();
-                        System.out.println("Đã tìm thấy. Con trỏ đang ở đối tượng thứ " + cursor.getPosition());
+                        System.out.println("Đã tìm thấy. Con trỏ đang ở đối tượng thứ " + curAccount.getPosition());
 
                         Intent main = new Intent(LoginActivity.this, MainActivity.class);
-                        main.putExtra("user_name", cursor.getString(1));
-                        main.putExtra("pass", cursor.getString(2));
+                        main.putExtra("user_name", curAccount.getString(1));
+                        main.putExtra("pass", curAccount.getString(2));
+                        main.putExtra("places", places);
                         startActivity(main);
 
                         break;
                     }
                     else {
-                        System.out.println("Chưa tìm thấy. Con trỏ đang ở đối tượng thứ " + cursor.getPosition());
-                        cursor.moveToNext();
+                        System.out.println("Chưa tìm thấy. Con trỏ đang ở đối tượng thứ " + curAccount.getPosition());
+                        curAccount.moveToNext();
                     }
                 }
             }
