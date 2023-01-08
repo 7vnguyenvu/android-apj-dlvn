@@ -1,6 +1,7 @@
 package com.example.du_lich_vn;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -45,6 +47,16 @@ public class ExploreFragment extends Fragment {
 
         PlaceAdapter placeAdapter = new PlaceAdapter(_ThisContext, R.layout.place_item_custom, places);
         lPlaces.setAdapter(placeAdapter);
+        lPlaces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent =new Intent(_ThisContext,DetailMaps.class);
+                Bundle bundle=new Bundle();
+                bundle.putSerializable("diadiemmaps",places.get(i));
+                intent.putExtra("data1",bundle);
+                startActivity(intent);
+            }
+        });
 
 
 
