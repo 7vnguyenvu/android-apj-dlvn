@@ -3,36 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="12dp"
+    android:gravity="center">
 
     <ImageView
         android:id="@+id/imageViewLocation"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="280dp"
+        android:layout_height="180dp"
         android:layout_weight="1"
-        android:src="@color/white"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_image"
+        android:background="@drawable/image_user_background"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="180dp"
         android:layout_weight="1"
+        android:paddingHorizontal="10dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtTen"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:text="TextView" />
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Name of Place"/>
 
-        <TextView
-            android:id="@+id/txtNoiDung"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:gravity="bottom"
-            android:layout_height="40dp"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:text="TextView" />
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNoiDung"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:textColor="@color/white"
+                android:text="Place's discription" />
+            <TextView
+
+                android:id="@+id/tPlace_Detail"
+                android:layout_width="match_parent"
+                android:layout_marginTop="24dp"
+                android:gravity="right|center_vertical|bottom"
+                android:layout_height="28dp"
+                android:textColor="@android:color/holo_blue_bright"
+                android:text="Xem chi tiết"
+                android:textStyle="italic"
+                />
+
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

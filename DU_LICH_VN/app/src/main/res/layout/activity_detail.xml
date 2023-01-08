@@ -16,14 +16,9 @@
         android:textSize="24dp"
         android:text="Tên địa điểm" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <ListView
-        android:id="@+id/manyLocation"
+    <WebView
+        android:id="@+id/web1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

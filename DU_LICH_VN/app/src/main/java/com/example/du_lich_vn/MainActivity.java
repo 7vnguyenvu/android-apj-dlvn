@@ -13,12 +13,15 @@ public class MainActivity extends AppCompatActivity{
     private String nick_name, user_name, pass;
     private ArrayList<Place> places;
 
+
     public void setPlaces(ArrayList<Place> places) {
         this.places = places;
     }
 
     SQLiteDatabase database;
     Cursor curPlace;
+
+
 
     public String getNick_name() {
         return nick_name;
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity{
         curPlace.moveToFirst();
         ArrayList<Place> _places = new ArrayList<>();
         while (!curPlace.isAfterLast()) {
-            _places.add(new Place(R.drawable.ic_image, curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5)));
+            //_places.add(new Place(R.drawable.ic_image, curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5)));
             curPlace.moveToNext();
             if (curPlace.isAfterLast())
                 System.out.println("Lấy danh sách Places thành công.");
@@ -63,5 +66,6 @@ public class MainActivity extends AppCompatActivity{
         user_name = getIntent().getStringExtra("user_name");
         pass = getIntent().getStringExtra("pass");
         places = (ArrayList<Place>) getIntent().getSerializableExtra("places");
+
     }
 }

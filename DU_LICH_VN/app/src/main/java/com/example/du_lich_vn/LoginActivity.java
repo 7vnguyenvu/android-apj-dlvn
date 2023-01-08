@@ -5,11 +5,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class LoginActivity extends Activity {
@@ -24,17 +22,21 @@ public class LoginActivity extends Activity {
 
     ArrayList<Place> places = new ArrayList<Place>();
 
+    String[] images = new String[] {""+R.drawable.test,""+R.drawable.vanhuongmai
+
+    };
+
     public void CreateDB() {
         database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
-        String sql = "CREATE TABLE PLACES (PLACE_CODE TEXT PRIMARY KEY, PLACE_NAME TEXT, DESCRIPTION TEXT, RATING TEXT, PROVINCE TEXT, POSITION TEXT)";
+        String sql = "CREATE TABLE PLACES (PLACE_CODE TEXT PRIMARY KEY, PLACE_NAME TEXT, DESCRIPTION TEXT, RATING TEXT, PROVINCE TEXT, POSITION TEXT,IMG INT,WEB TEXT)";
         database.execSQL(sql);
         sql = "CREATE TABLE ACCOUNTS (_ID TEXT PRIMARY KEY, NICK_NAME TEXT, USER_NAME TEXT, PASSWORD TEXT)";
         database.execSQL(sql);
 
         // INSERT VALUES - PLACES
-        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M5C7X6', 'Vạn Hương Mai', 'Công ty Du lịch Vạn Hương Mai', '4.0 (1236 reviews)', 'Châu Đốc, An Giang', 'M5C7+X6')";
+        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION,IMG ,WEB ) VALUES ('M5C7X6', 'Vạn Hương Mai', 'Công ty Du lịch Vạn Hương Mai', '4.0 (1236 reviews)', 'Châu Đốc, An Giang', 'M5C7+X6','2131230940','vanhuongmai.html')";
         database.execSQL(sql);
-        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M3JJR4', 'Miếu Bà Chúa Xứ Núi Sam', 'Chùa Bà Châu Đốc', '4.6 (299 reviews)', 'Châu Đốc, An Giang', 'M3JJ+R4')";
+        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION,IMG ,WEB ) VALUES ('M3JJR4', 'Miếu Bà Chúa Xứ Núi Sam', 'Chùa Bà Châu Đốc', '4.6 (299 reviews)', 'Châu Đốc, An Giang', 'M3JJ+R4','2131230941','mieubanuisam.html')";
         database.execSQL(sql);
 
         // INSERT VALUES - ACCOUNTS
@@ -56,10 +58,20 @@ public class LoginActivity extends Activity {
         System.out.println("Truy vấn PLACES thành công.");
 
         curPlace.moveToFirst();
+
         while (!curPlace.isAfterLast()) {
-            places.add(new Place(R.drawable.ic_image, curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5)));
+            // nếu tên
+
+            for (int i = 0; i < images.length; i++) {
+                System.out.println(images[i]);
+                if(images[i].equals(curPlace.getString(6)))
+                    places.add(new Place(Integer.parseInt(images[i]), curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5),curPlace.getString(7)));
+
+            }
+            //places.add(new Place(2131230940, curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5)));
             curPlace.moveToNext();
         }
+
 
         if (curPlace.isAfterLast())
             System.out.println("Lấy danh sách Places thành công.");
@@ -86,6 +98,8 @@ public class LoginActivity extends Activity {
         ePassword_Login = findViewById(R.id.ePassword_Login);
 
 
+
+
         // Skip
         findViewById(R.id.bSkip_Login).setOnClickListener(view -> {
             Intent main = new Intent(LoginActivity.this, MainActivity.class);
@@ -93,6 +107,7 @@ public class LoginActivity extends Activity {
             main.putExtra("user_name", "7V_Admin");
             main.putExtra("pass", "Admin_depzai");
             main.putExtra("places", places);
+
             startActivity(main);
         });
 
@@ -121,6 +136,7 @@ public class LoginActivity extends Activity {
                         main.putExtra("user_name", curAccount.getString(2));
                         main.putExtra("pass", curAccount.getString(3));
                         main.putExtra("places", places);
+
                         startActivity(main);
 
                         break;

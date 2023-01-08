@@ -15,12 +15,12 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-public class LocationAdapter extends ArrayAdapter<FindFrag_Location> {
+public class LocationAdapter extends ArrayAdapter<Place> {
     private Context contxt;
-    private ArrayList<FindFrag_Location> arr;
+    private ArrayList<Place> arr;
     private int res;
 
-    public LocationAdapter(@NonNull Context context,int resour,ArrayList<FindFrag_Location> ArrLocation) {
+    public LocationAdapter(@NonNull Context context,int resour,ArrayList<Place> ArrLocation) {
         super(context,resour,ArrLocation);
         contxt=context;
         arr=ArrLocation;
@@ -36,9 +36,9 @@ public class LocationAdapter extends ArrayAdapter<FindFrag_Location> {
         ImageView  imageView=convertView.findViewById(R.id.imageViewLocation);
         TextView textViewTen=convertView.findViewById(R.id.txtTen);
         TextView textViewNoiDung= convertView.findViewById(R.id.txtNoiDung);
-        imageView.setImageResource(arr.get(position).getImg());
+        imageView.setImageResource(arr.get(position).getImage());
         textViewTen.setText(arr.get(position).getName());
-        textViewNoiDung.setText(arr.get(position).getMota());
+        textViewNoiDung.setText(arr.get(position).getDescription());
         return convertView;
     }
 }

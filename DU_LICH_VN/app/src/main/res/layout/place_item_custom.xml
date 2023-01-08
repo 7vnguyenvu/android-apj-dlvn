@@ -10,6 +10,7 @@
         android:id="@+id/iPlace_Img"
         android:layout_width="280dp"
         android:layout_height="180dp"
+        android:scaleType="fitXY"
         android:layout_weight="1"
         android:src="@drawable/ic_image"
         android:background="@drawable/image_user_background"/>

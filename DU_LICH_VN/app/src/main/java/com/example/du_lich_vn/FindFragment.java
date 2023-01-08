@@ -40,7 +40,9 @@ public class FindFragment extends Fragment  {
     }
     ListView lv;
     View view;
-    ArrayList<FindFrag_Location> arrLocation=new ArrayList<FindFrag_Location>();
+    private MainActivity _MainActivity;
+    Context _ThisContext;
+    ArrayList<Place> arrLocation=new ArrayList<Place>();
     private SearchView searchView;
 
     @Override
@@ -53,8 +55,8 @@ public class FindFragment extends Fragment  {
 
 
     private void mysearch(String s) {
-        ArrayList<FindFrag_Location> find= new ArrayList<>();
-        for (FindFrag_Location fl:arrLocation){
+        ArrayList<Place> find= new ArrayList<>();
+        for (Place fl:arrLocation){
             if(fl.getName().toLowerCase().contains(s.toLowerCase())){
                 find.add(fl);
             }
@@ -68,17 +70,15 @@ public class FindFragment extends Fragment  {
             lv.setAdapter(locationAdapter_Search);
         }
     }
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_find, container, false);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         searchView=view.findViewById(R.id.Search_location);
         searchView.clearFocus();
 
         lv=view.findViewById(R.id.lvfind);
-        AddArrayLocation();
+        arrLocation=_MainActivity.getPlaces();
 
         LocationAdapter locationAdapter = new LocationAdapter(getActivity().getApplicationContext(),R.layout.lv_of_find,arrLocation);
         lv.setAdapter(locationAdapter);
@@ -106,20 +106,26 @@ public class FindFragment extends Fragment  {
             }
         });
 
+
+
+
+
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view=inflater.inflate(R.layout.fragment_find, container, false);
+        _ThisContext = container.getContext();
+        _MainActivity = (MainActivity) getActivity();
         return view;
 
     }
 
 
 
-    private void AddArrayLocation(){
-        arrLocation.add(new FindFrag_Location(R.drawable.ic_user,"An giang","Good"));
-        arrLocation.add(new FindFrag_Location(R.drawable.ic_user,"Cần Thơ","Not Good"));
-        arrLocation.add(new FindFrag_Location(R.drawable.ic_user,"Đồng Tháp","Good"));
-        arrLocation.add(new FindFrag_Location(R.drawable.ic_user,"Kiên Giang","Good"));
-        arrLocation.add(new FindFrag_Location(R.drawable.ic_user,"Hà Nội","Good"));
-        arrLocation.add(new FindFrag_Location(R.drawable.ic_user,"Bạc Liêu","Good"));
-    }
+
 
 
 }

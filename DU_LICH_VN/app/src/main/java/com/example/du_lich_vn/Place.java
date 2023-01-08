@@ -9,6 +9,16 @@ public class Place implements Serializable {
     private String rating;
     private String province;
 
+    public String getWeb() {
+        return web;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
+    }
+
+    private String web;
+
     public String getProvince() {
         return province;
     }
@@ -59,12 +69,13 @@ public class Place implements Serializable {
         this.rating = rating;
     }
 
-    public Place(int image, String name, String description, String rating, String province, String position) {
+    public Place(int image, String name, String description, String rating, String province, String position,String web) {
         this.image = image;
         this.name = name;
         this.description = description;
         this.rating = rating;
         this.province = province;
         this.position = position;
+        this.web=web;
     }
 }
