@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -92,6 +93,8 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
 
             case R.id.iExplore_Ctrl:
 
+
+
                 FragmentManager fragmentManager_Explore = getActivity().getSupportFragmentManager();
                 fragmentManager_Explore
                         .beginTransaction()
@@ -106,13 +109,15 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
 
             case R.id.iUser_Ctrl:
 
+
+                String nn = _MainActivity.getNick_name();
                 String un = _MainActivity.getUser_name();
                 String pw = _MainActivity.getPass();
 
                 FragmentManager fragmentManager_User = getActivity().getSupportFragmentManager();
                 fragmentManager_User
                         .beginTransaction()
-                        .replace(R.id.PageContainer, UserFragment.newInstance(un, pw))
+                        .replace(R.id.PageContainer, UserFragment.newInstance(nn, un, pw))
                         .commit();
 
                 iS.getLayoutParams().height = 55;

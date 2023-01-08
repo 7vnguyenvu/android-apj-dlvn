@@ -24,7 +24,6 @@ public class ExploreFragment extends Fragment {
     private MainActivity _MainActivity;
 
     public ExploreFragment() {
-        // Required empty public constructor
     }
 
     public static ExploreFragment newInstance() {
@@ -42,7 +41,6 @@ public class ExploreFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         lPlaces = view.findViewById(R.id.lPlaces);
-        //Addplaces();
         places = _MainActivity.getPlaces();
 
         PlaceAdapter placeAdapter = new PlaceAdapter(_ThisContext, R.layout.place_item_custom, places);
@@ -62,10 +60,5 @@ public class ExploreFragment extends Fragment {
 
 
         return _View;
-    }
-
-    private void Addplaces() {
-        places.add(new Place(R.drawable.ic_image,"Vạn Hương Mai","Công ty Du lịch Vạn Hương Mai", "4.0 (1236 review)", "Châu Đốc, An Giang", "M5C7+X6"));
-        places.add(new Place(R.drawable.ic_image,"Miếu Bà Chúa Xứ Núi Sam", "Chùa Bà Châu Đốc", "4.6 (299 review)", "Châu Đốc, An Giang", "M3JJ+R4"));
     }
 }

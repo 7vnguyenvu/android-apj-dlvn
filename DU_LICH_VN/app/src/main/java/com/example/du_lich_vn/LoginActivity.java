@@ -17,25 +17,30 @@ public class LoginActivity extends Activity {
     SQLiteDatabase database;
     Cursor curAccount, curPlace;
     EditText eAccount_Login, ePassword_Login;
+
+    public ArrayList<Place> getPlaces() {
+        return places;
+    }
+
     ArrayList<Place> places = new ArrayList<Place>();
 
     public void CreateDB() {
         database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
         String sql = "CREATE TABLE PLACES (PLACE_CODE TEXT PRIMARY KEY, PLACE_NAME TEXT, DESCRIPTION TEXT, RATING TEXT, PROVINCE TEXT, POSITION TEXT)";
         database.execSQL(sql);
-        sql = "CREATE TABLE ACCOUNTS (_ID TEXT PRIMARY KEY, USER_NAME TEXT, PASSWORD TEXT)";
+        sql = "CREATE TABLE ACCOUNTS (_ID TEXT PRIMARY KEY, NICK_NAME TEXT, USER_NAME TEXT, PASSWORD TEXT)";
         database.execSQL(sql);
 
         // INSERT VALUES - PLACES
-        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M5C7X6', 'Vạn Hương Mai', 'Công ty Du lịch Vạn Hương Mai', '4.0 (1236 review)', 'Châu Đốc, An Giang', 'M5C7+X6')";
+        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M5C7X6', 'Vạn Hương Mai', 'Công ty Du lịch Vạn Hương Mai', '4.0 (1236 reviews)', 'Châu Đốc, An Giang', 'M5C7+X6')";
         database.execSQL(sql);
-        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M3JJR4', 'Miếu Bà Chúa Xứ Núi Sam', 'Chùa Bà Châu Đốc', '4.6 (299 review)', 'Châu Đốc, An Giang', 'M3JJ+R4')";
+        sql = "INSERT INTO PLACES (PLACE_CODE, PLACE_NAME, DESCRIPTION, RATING, PROVINCE, POSITION) VALUES ('M3JJR4', 'Miếu Bà Chúa Xứ Núi Sam', 'Chùa Bà Châu Đốc', '4.6 (299 reviews)', 'Châu Đốc, An Giang', 'M3JJ+R4')";
         database.execSQL(sql);
 
         // INSERT VALUES - ACCOUNTS
-        sql = "INSERT INTO ACCOUNTS (_ID, USER_NAME, PASSWORD) VALUES ('777', '7V_Admin', 'Admin_depzai')";
+        sql = "INSERT INTO ACCOUNTS (_ID, NICK_NAME, USER_NAME, PASSWORD) VALUES ('777', '7V - NGUYEN VU', '7V_Admin', 'Admin_depzai')";
         database.execSQL(sql);
-        sql = "INSERT INTO ACCOUNTS (_ID, USER_NAME, PASSWORD) VALUES ('888', 'HT_Admin', 'Admin_depzai')";
+        sql = "INSERT INTO ACCOUNTS (_ID, NICK_NAME, USER_NAME, PASSWORD) VALUES ('888', 'HT - HOANG THANG', 'HT_Admin', 'Admin_depzai')";
         database.execSQL(sql);
 
         System.out.println("Đã tạo Database.");
@@ -84,8 +89,9 @@ public class LoginActivity extends Activity {
         // Skip
         findViewById(R.id.bSkip_Login).setOnClickListener(view -> {
             Intent main = new Intent(LoginActivity.this, MainActivity.class);
-            main.putExtra("user_name", "");
-            main.putExtra("pass", "");
+            main.putExtra("nick_name", "7V - NGUYEN VU");
+            main.putExtra("user_name", "7V_Admin");
+            main.putExtra("pass", "Admin_depzai");
             main.putExtra("places", places);
             startActivity(main);
         });
@@ -102,8 +108,8 @@ public class LoginActivity extends Activity {
 
                 while (!curAccount.isAfterLast()){
                     if (
-                            eAccount_Login.getText().toString().trim().equals(curAccount.getString(1).trim()) &&
-                            ePassword_Login.getText().toString().trim().equals(curAccount.getString(2).trim())
+                            eAccount_Login.getText().toString().trim().equals(curAccount.getString(2).trim()) &&
+                            ePassword_Login.getText().toString().trim().equals(curAccount.getString(3).trim())
                     ) {
 //                        String user = "";
 //                        user = cursor.getString(1) + " - " + cursor.getString(2);
@@ -111,8 +117,9 @@ public class LoginActivity extends Activity {
                         System.out.println("Đã tìm thấy. Con trỏ đang ở đối tượng thứ " + curAccount.getPosition());
 
                         Intent main = new Intent(LoginActivity.this, MainActivity.class);
-                        main.putExtra("user_name", curAccount.getString(1));
-                        main.putExtra("pass", curAccount.getString(2));
+                        main.putExtra("nick_name", curAccount.getString(1));
+                        main.putExtra("user_name", curAccount.getString(2));
+                        main.putExtra("pass", curAccount.getString(3));
                         main.putExtra("places", places);
                         startActivity(main);
 

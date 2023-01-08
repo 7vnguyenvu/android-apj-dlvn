@@ -40,6 +40,21 @@
             android:paddingHorizontal="20dp"
             />
 
+
+        <Button
+            android:id="@+id/bAdmin_Tools"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Công cụ Admin"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:gravity="left|center_vertical"
+            android:background="#00FFFFFF"
+            android:paddingHorizontal="20dp"
+            android:visibility="gone"
+            />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="30dp"

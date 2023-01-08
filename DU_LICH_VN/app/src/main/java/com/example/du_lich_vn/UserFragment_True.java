@@ -20,16 +20,19 @@ import android.widget.TextView;
 public class UserFragment_True extends Fragment {
 
     int admin = 0;
+    String user_name;
 
     ImageView tUser_Img;
     TextView tUser_Name, tUser_Disc;
 
-    public UserFragment_True(int num_ad) {
-        admin = num_ad;
+
+    public UserFragment_True(int num, String name) {
+        admin = num;
+        user_name = name;
     }
 
-    public static UserFragment_True newInstance(int num_ad) {
-        UserFragment_True fragment = new UserFragment_True(num_ad);
+    public static UserFragment_True newInstance(int num, String name ) {
+        UserFragment_True fragment = new UserFragment_True(num, name);
         return fragment;
     }
 
@@ -46,11 +49,11 @@ public class UserFragment_True extends Fragment {
         tUser_Disc = view.findViewById(R.id.tUser_Disc);
 
         if (admin == 1) {
-            tUser_Name.setText("7V - NGUYEN VU");
-            tUser_Disc.setText("Mr. Admin DTH206069");
-        } else if (admin == 2) {
-            tUser_Name.setText("HT - HOANG THANG");
+            tUser_Name.setText(user_name);
             tUser_Disc.setText("Mr. Admin");
+        } else if (admin == 2) {
+            tUser_Name.setText(user_name);
+            tUser_Disc.setText("Chào mừng đến với Travel Me");
         }
 
     }
