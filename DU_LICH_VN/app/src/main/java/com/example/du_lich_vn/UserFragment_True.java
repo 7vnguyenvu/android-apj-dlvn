@@ -45,13 +45,19 @@ public class UserFragment_True extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        tUser_Img = view.findViewById(R.id.tUser_Img);
         tUser_Name = view.findViewById(R.id.tUser_Name);
         tUser_Disc = view.findViewById(R.id.tUser_Disc);
 
         if (admin == 1) {
+            if (user_name.equals("7V - NGUYEN VU"))
+                tUser_Img.setImageResource(R.drawable.nguyenvu);
+            else
+                tUser_Img.setImageResource(R.drawable.hoangthang);
             tUser_Name.setText(user_name);
             tUser_Disc.setText("Mr. Admin");
         } else if (admin == 2) {
+            tUser_Img.setImageResource(R.drawable.ic_user);
             tUser_Name.setText(user_name);
             tUser_Disc.setText("Chào mừng đến với Travel Me");
         }

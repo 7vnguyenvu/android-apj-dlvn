@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class ExploreFragment extends Fragment {
 
@@ -45,6 +46,7 @@ public class ExploreFragment extends Fragment {
 
         PlaceAdapter placeAdapter = new PlaceAdapter(_ThisContext, R.layout.place_item_custom, places);
         lPlaces.setAdapter(placeAdapter);
+
 
 
 
