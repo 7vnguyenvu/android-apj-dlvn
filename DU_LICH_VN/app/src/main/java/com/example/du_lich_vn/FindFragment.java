@@ -1,33 +1,22 @@
 package com.example.du_lich_vn;
 
-import android.annotation.SuppressLint;
-import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 public class FindFragment extends Fragment  {
 
@@ -62,7 +51,7 @@ public class FindFragment extends Fragment  {
             }
 
         }
-        LocationAdapter locationAdapter_Search = new LocationAdapter(getActivity().getApplicationContext(),R.layout.lv_of_find,find);
+        LocationAdapter locationAdapter_Search = new LocationAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,find);
         if(find.isEmpty()){
             Toast.makeText(getActivity().getApplicationContext(), "hihi", Toast.LENGTH_SHORT).show();
         }
@@ -80,7 +69,7 @@ public class FindFragment extends Fragment  {
         lv=view.findViewById(R.id.lvfind);
         arrLocation=_MainActivity.getPlaces();
 
-        LocationAdapter locationAdapter = new LocationAdapter(getActivity().getApplicationContext(),R.layout.lv_of_find,arrLocation);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,arrLocation);
         lv.setAdapter(locationAdapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -13,72 +13,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33a8a8de-912c-49e9-a609-eee66b37449e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/colorschememapping.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/filelist.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image005.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image006.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image007.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image008.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image009.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image010.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image011.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image012.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image013.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image014.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image015.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image016.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image017.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image018.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image019.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image020.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image021.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image022.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image023.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/image024.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/vanhuongmai_files/themedata.thmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/DetailPlaceActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/ShowPlacesActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/ic_launcher_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_launcher_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_launcher_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_launcher_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/chuavanlinh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_launcher_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/mieubanuisam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_place.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_places.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/ActionsPlaceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/ActionsPlaceActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/AdminToolsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/AdminToolsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/DetailActivity_Find.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/ExploreFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/ExploreFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/FindFrag_Location.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/ForgotPassActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/RegisActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgotpass_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_regis_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/FindFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/FindFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/LocationAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/LocationAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_actions_place.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_actions_place.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_find.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_find.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user__true.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user__true.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/lv_of_find.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/lv_of_find.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/place_item_custom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/place_item_custom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/lv_of_find.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/place_item_of_find_custom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Vu\.android\avd\Pixel_5_API_29_1.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\nt091\.android\avd\Pixel_5_API_25.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -137,7 +86,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -145,6 +94,7 @@
       <recent name="com.example.du_lich_vn" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DoAnAndroid\doan2\Android_DLVN\DU_LICH_VN\app\src\main\res\layout" />
       <recent name="Z:\HOC_KY_V\LAP_TRINH_THIET_BI_DI_DONG\Workspace__DI-DONG\DE_AN\DU_LICH_VN\app\src\main\res\drawable-xxhdpi" />
     </key>
     <key name="android.template.-1505784193">
@@ -165,7 +115,7 @@
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="DU_LICH_VN.app" />
+      <module name="DU_LICH_VN.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />

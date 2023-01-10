@@ -15,15 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
+        <activity android:name=".RegisActivity"
+            android:exported="true"/>
+        <activity android:name=".ForgotPassActivity"
+            android:exported="true"/>
         <activity
             android:name=".ShowPlacesActivity"
             android:exported="false" />
         <activity
             android:name=".DetailPlaceActivity"
             android:exported="false" />
-        <activity
-            android:name=".DetailMaps"
-            android:exported="true" />
+
         <activity
             android:name=".ActionsPlaceActivity"
             android:exported="false" />
@@ -42,9 +44,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-        <activity
-            android:name=".DetailActivity_Find"
-            android:exported="true" />
+
 
         <meta-data
             android:name="preloaded_fonts"
