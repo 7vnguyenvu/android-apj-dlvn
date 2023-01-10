@@ -7,7 +7,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,12 +19,15 @@ public class LoginActivity extends Activity {
     SQLiteDatabase database;
     Cursor curAccount, curPlace;
     EditText eAccount_Login, ePassword_Login;
+    TextView tSignup_Login,tForgotPass_Login;
 
     ArrayList<Place> places = new ArrayList<Place>();
+    ArrayList<Account> accounts= new ArrayList<Account>();
 
     public ArrayList<Place> getPlaces() {
         return places;
     }
+
 
     public void CreateDB() {
         database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
@@ -56,6 +61,11 @@ public class LoginActivity extends Activity {
                 System.out.println("Lấy danh sách Places thành công.");
         }
 
+        curAccount.moveToFirst();
+        while (curAccount.moveToNext()) {
+            accounts.add(new Account(curAccount.getString(0),curAccount.getString(1),curAccount.getString(2),curAccount.getString(3)));
+        }
+
     }
 
     @Override
@@ -75,6 +85,27 @@ public class LoginActivity extends Activity {
 
         eAccount_Login = findViewById(R.id.eAccount_Login);
         ePassword_Login = findViewById(R.id.ePassword_Login);
+        tSignup_Login=findViewById(R.id.tSignup_Login);
+        tForgotPass_Login=findViewById(R.id.tForgotPass_Login);
+        //Regis login
+        tSignup_Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regis=new Intent(LoginActivity.this,RegisActivity.class);
+                startActivity(regis);
+            }
+        });
+        // ForgotPass_Login
+        tForgotPass_Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent forgotpass=new Intent(LoginActivity.this, ForgotPassActivity.class);
+                forgotpass.putExtra("account",accounts);
+                startActivity(forgotpass);
+
+            }
+        });
+
 
         // Skip
         findViewById(R.id.bSkip_Login).setOnClickListener(view -> {
@@ -99,7 +130,7 @@ public class LoginActivity extends Activity {
                 while (!curAccount.isAfterLast()){
                     if (
                             eAccount_Login.getText().toString().trim().equals(curAccount.getString(2).trim()) &&
-                            ePassword_Login.getText().toString().trim().equals(curAccount.getString(3).trim())
+                                    ePassword_Login.getText().toString().trim().equals(curAccount.getString(3).trim())
                     ) {
 //                        String user = "";
 //                        user = cursor.getString(1) + " - " + cursor.getString(2);

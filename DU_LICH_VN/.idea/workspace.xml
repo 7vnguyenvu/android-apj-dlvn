@@ -13,6 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33a8a8de-912c-49e9-a609-eee66b37449e" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/PlaceShowAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/place_item_of_show_custom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
@@ -65,13 +66,27 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/lv_of_find.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/place_item_of_find_custom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/place_item_custom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/place_item_of_explore_custom.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/ForgotPassActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/RegisActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_forgotpass_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_regis_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/FindFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/FindFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/du_lich_vn/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/lv_of_find.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/place_item_of_find_custom.xml" afterDir="false" />
+>>>>>>> 2a816bb31acccee2bc3bb43ab02feb47c3fe1477
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Vu\.android\avd\Pixel_5_API_25.avd]" />
+=======
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\nt091\.android\avd\Pixel_5_API_25.avd]" />
+>>>>>>> 2a816bb31acccee2bc3bb43ab02feb47c3fe1477
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -130,7 +145,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -138,6 +153,7 @@
       <recent name="com.example.du_lich_vn" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DoAnAndroid\doan2\Android_DLVN\DU_LICH_VN\app\src\main\res\layout" />
       <recent name="Z:\HOC_KY_V\LAP_TRINH_THIET_BI_DI_DONG\Workspace__DI-DONG\DE_AN\DU_LICH_VN\app\src\main\res\drawable-xxhdpi" />
     </key>
     <key name="android.template.-1505784193">
@@ -158,7 +174,7 @@
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="DU_LICH_VN.app" />
+      <module name="DU_LICH_VN.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
