@@ -9,12 +9,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class AdminToolsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private ArrayList<Place> places;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_tools);
+
+        places = (ArrayList<Place>) getIntent().getSerializableExtra("places");
 
         findViewById(R.id.bBack).setOnClickListener(this);
         findViewById(R.id.bAdd_Place).setOnClickListener(this);
@@ -43,7 +48,7 @@ public class AdminToolsActivity extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.bShow_Places:
-                startActivity(new Intent(AdminToolsActivity.this, ShowPlacesActivity.class));
+                startActivity(new Intent(AdminToolsActivity.this, ShowPlacesActivity.class).putExtra("places", places ));
                 break;
 
             case R.id.bAdd_Account:

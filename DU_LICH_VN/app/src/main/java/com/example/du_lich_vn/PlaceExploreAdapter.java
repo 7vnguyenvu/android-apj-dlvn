@@ -14,13 +14,13 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class PlaceAdapter extends ArrayAdapter<Place> {
+public class PlaceExploreAdapter extends ArrayAdapter<Place> {
 
     private Context _context;
     private ArrayList<Place> array;
     private int res;
 
-    public PlaceAdapter(@NonNull Context context, int resour, ArrayList<Place> places) {
+    public PlaceExploreAdapter(@NonNull Context context, int resour, ArrayList<Place> places) {
         super(context,resour, places);
         _context=context;
         array=places;

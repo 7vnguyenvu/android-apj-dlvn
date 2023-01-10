@@ -15,12 +15,12 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-public class LocationAdapter extends ArrayAdapter<Place> {
+public class PlaceFindAdapter extends ArrayAdapter<Place> {
     private Context contxt;
     private ArrayList<Place> arr;
     private int res;
 
-    public LocationAdapter(@NonNull Context context,int resour,ArrayList<Place> ArrLocation) {
+    public PlaceFindAdapter(@NonNull Context context, int resour, ArrayList<Place> ArrLocation) {
         super(context,resour,ArrLocation);
         contxt=context;
         arr=ArrLocation;

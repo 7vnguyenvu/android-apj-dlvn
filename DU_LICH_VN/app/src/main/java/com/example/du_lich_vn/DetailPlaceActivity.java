@@ -51,8 +51,6 @@ public class DetailPlaceActivity extends AppCompatActivity {
         wMap.getSettings().setJavaScriptEnabled(true);
         wMap.setWebViewClient(new WebViewClient());
 
-        //wBlog.loadUrl("file:///android_asset/vanhuongmai.html");
-
         findViewById(R.id.bDetail_Link).setOnClickListener(view -> {
             Intent link = new Intent(Intent.ACTION_VIEW);
             link.setData(Uri.parse(place.getLink()));

@@ -67,6 +67,18 @@
             android:paddingHorizontal="20dp"
             />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Đăng xuất"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:gravity="left|center_vertical"
+            android:background="#00FFFFFF"
+            android:paddingHorizontal="20dp"
+            />
+
     </LinearLayout>
 
 </LinearLayout>

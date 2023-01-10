@@ -49,7 +49,7 @@ public class LoginActivity extends Activity {
 
         curPlace.moveToFirst();
         while (!curPlace.isAfterLast()) {
-            places.add(new Place(Integer.parseInt(curPlace.getString(6)), curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5), curPlace.getString(7)));
+            places.add(new Place(Integer.parseInt(curPlace.getString(6)), curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5), curPlace.getString(7), curPlace.getString(0)));
 
             curPlace.moveToNext();
             if (curPlace.isAfterLast())
@@ -79,10 +79,9 @@ public class LoginActivity extends Activity {
         // Skip
         findViewById(R.id.bSkip_Login).setOnClickListener(view -> {
             Intent main = new Intent(LoginActivity.this, MainActivity.class);
-            main.putExtra("nick_name", "7V - NGUYEN VU");
-            main.putExtra("user_name", "7V_Admin");
-            main.putExtra("pass", "Admin_depzai");
-            main.putExtra("places", places);
+            main.putExtra("nick_name", "");
+            main.putExtra("user_name", "");
+            main.putExtra("pass", "");
 
             startActivity(main);
         });
@@ -111,7 +110,6 @@ public class LoginActivity extends Activity {
                         main.putExtra("nick_name", curAccount.getString(1));
                         main.putExtra("user_name", curAccount.getString(2));
                         main.putExtra("pass", curAccount.getString(3));
-                        main.putExtra("places", places);
 
                         startActivity(main);
 

@@ -18,6 +18,7 @@
             android:layout_height="48dp"
             android:queryHint="Search...."
             android:background="@drawable/edittext_background"
+            android:iconifiedByDefault="false"
             />
     </LinearLayout>
 

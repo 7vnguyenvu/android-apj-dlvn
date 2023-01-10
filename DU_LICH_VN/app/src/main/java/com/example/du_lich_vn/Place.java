@@ -4,12 +4,21 @@ import java.io.Serializable;
 
 public class Place implements Serializable {
     private int image;
+    private String code;
     private String name;
     private String description;
     private String rating;
     private String province;
     private String position;
     private String link;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getLink() {
         return link;
@@ -69,7 +78,7 @@ public class Place implements Serializable {
         this.rating = rating;
     }
 
-    public Place(int image, String name, String description, String rating, String province, String position, String link) {
+    public Place(int image, String name, String description, String rating, String province, String position, String link, String code) {
         this.image = image;
         this.name = name;
         this.description = description;
@@ -77,5 +86,6 @@ public class Place implements Serializable {
         this.province = province;
         this.position = position;
         this.link = link;
+        this.code = code;
     }
 }

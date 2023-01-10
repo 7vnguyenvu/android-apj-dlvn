@@ -74,8 +74,7 @@
     </TableRow>
 
     <TableRow
-        android:layout_marginTop="12dp"
-        android:visibility="gone">
+        android:layout_marginTop="12dp">
 
         <TextView
             android:layout_width="100dp"
@@ -240,7 +239,7 @@
     <View
         android:layout_height="1dp"
         android:background="@color/white"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"/>
 
     <LinearLayout
@@ -284,6 +283,7 @@
         android:layout_marginVertical="20dp" />
 
     <Button
+        android:layout_height="40dp"
         android:layout_marginHorizontal="8dp"
         android:id="@+id/bBackToAdminTools"
         android:text="Trở về"

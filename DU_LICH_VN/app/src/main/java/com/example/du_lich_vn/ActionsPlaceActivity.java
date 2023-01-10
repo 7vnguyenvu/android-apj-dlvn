@@ -17,13 +17,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnClickListener {
 
     final int RC_IMG = 111;
+    final int CODE_UPDATE = 444;
 
     SQLiteDatabase database;
     EditText eID, eName, eDesc, eRate, eProv, ePos, eLink;
-    Button bImg;
+    Button bImg, bSave, bUpdate, bClear;
+    Place place;
 
 
     @Override
@@ -33,12 +37,15 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
 
         eID = findViewById(R.id.ePlace_Code);
         eName = findViewById(R.id.ePlace_Name);
-        //bImg = findViewById(R.id.bPlace_Img);
         eDesc = findViewById(R.id.ePlace_Desc);
         eRate = findViewById(R.id.ePlace_Rate);
         eProv = findViewById(R.id.ePlace_Pro);
         ePos = findViewById(R.id.ePlace_Pos);
         eLink = findViewById(R.id.ePlace_Link);
+        bImg = findViewById(R.id.bPlace_Img);
+        bSave = findViewById(R.id.bSave_Place);
+        bUpdate = findViewById(R.id.bUpdate_Place);
+        bClear = findViewById(R.id.bClear_ActionForm);
 
         ePos.addTextChangedListener(new TextWatcher() {
             @Override
@@ -58,9 +65,29 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
             }
         });
 
+        bImg.setOnClickListener(this);
+        bClear.setOnClickListener(this);
+        bSave.setOnClickListener(this);
+        bUpdate.setOnClickListener(this);
         findViewById(R.id.bBackToAdminTools).setOnClickListener(this);
-        findViewById(R.id.bClear_ActionForm).setOnClickListener(this);
-        findViewById(R.id.bSave_Place).setOnClickListener(this);
+
+
+        // Update
+        if (getIntent().getBundleExtra("bundle") != null && getIntent().getBundleExtra("bundle").getInt("CODE_UPDATE") == CODE_UPDATE) {
+            bUpdate.setEnabled(true);
+            bSave.setEnabled(false);
+            bClear.setVisibility(View.GONE);
+
+            place = (Place) getIntent().getBundleExtra("bundle").getSerializable("place");
+
+            eID.setText(place.getCode());
+            eName.setText(place.getName());
+            eDesc.setText(place.getDescription());
+            eRate.setText(place.getRating());
+            eProv.setText(place.getProvince());
+            ePos.setText(place.getPosition());
+            eLink.setText(place.getLink());
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -115,10 +142,40 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
 
     }
 
+    public void Update_Place(){
+
+        if (!haveEmpty()) {
+            database = openOrCreateDatabase("Database.db", MODE_PRIVATE, null);
+
+            ContentValues values = new ContentValues();
+            values.put("PLACE_CODE", eID.getText().toString());
+            values.put("PLACE_NAME", eName.getText().toString());
+            values.put("DESCRIPTION", eDesc.getText().toString());
+            values.put("RATING", eRate.getText().toString());
+            values.put("PROVINCE", eProv.getText().toString());
+            values.put("POSITION", ePos.getText().toString());
+            values.put("IMAGE", place.getImage());
+            values.put("LINK", eLink.getText().toString());
+
+            if (database.update("PLACES", values, "PLACE_CODE=?", new String[] { place.getCode() }) == 0){
+                Toast.makeText(this, "Cập nhật thất bại! Trùng khóa chính.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.bPlace_Img:
+
+                Intent pick = new Intent(Intent.ACTION_PICK);
+                pick.setType("image/*");
+                startActivity(pick);
+
+                break;
 
             case R.id.bBackToAdminTools:
                 finish();
@@ -131,12 +188,18 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
                 eRate.setText("");
                 eProv.setText("");
                 ePos.setText("");
+                eLink.setText("");
                 eName.requestFocus();
                 break;
 
             case R.id.bSave_Place:
                 Insert_Place();
-                startActivity(new Intent(ActionsPlaceActivity.this, LoginActivity.class));
+                startActivity(new Intent(ActionsPlaceActivity.this, MainActivity.class));
+                break;
+
+            case R.id.bUpdate_Place:
+                Update_Place();
+                startActivity(new Intent(ActionsPlaceActivity.this, MainActivity.class));
                 break;
         }
 

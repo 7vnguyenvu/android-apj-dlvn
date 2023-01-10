@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tPlace_Code_Show"
+            android:layout_width="70dp"
+            android:text="_id"
+            android:background="@color/black"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginBottom="1dp"
+            android:paddingHorizontal="4dp"
+            android:singleLine="true"
+            />
+        <TextView
+            android:id="@+id/tPlace_Name_Show"
+            android:layout_width="200dp"
+            android:text="Name"
+            android:background="@color/black"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginBottom="1dp"
+            android:paddingHorizontal="4dp"
+            android:singleLine="true"
+            />
+        <TextView
+            android:id="@+id/tPlace_Prov_Show"
+            android:layout_weight="1"
+            android:text="Province"
+            android:background="@color/black"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginBottom="1dp"
+            android:paddingHorizontal="4dp"
+            android:singleLine="true"
+            />
+    </TableRow>
+
+
+
+</TableLayout>

@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 
 public class ExploreFragment extends Fragment {
 
@@ -46,7 +45,7 @@ public class ExploreFragment extends Fragment {
         lPlaces = view.findViewById(R.id.lPlaces);
         places = _MainActivity.getPlaces();
 
-        PlaceAdapter placeAdapter = new PlaceAdapter(_ThisContext, R.layout.place_item_custom, places);
+        PlaceExploreAdapter placeAdapter = new PlaceExploreAdapter(_ThisContext, R.layout.place_item_of_explore_custom, places);
         lPlaces.setAdapter(placeAdapter);
 
         lPlaces.setOnItemClickListener(new AdapterView.OnItemClickListener() {

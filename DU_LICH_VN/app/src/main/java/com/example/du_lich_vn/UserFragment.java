@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link UserFragment#newInstance} factory method to
@@ -22,8 +24,10 @@ import android.widget.Button;
 public class UserFragment extends Fragment {
 
     View _View;
+    private MainActivity _MainActivity;
     Context _ThisConText;
     Button bAd_Tools;
+    ArrayList<Place> places = new ArrayList<Place>();
 
     public String getUser() {
         return user;
@@ -79,6 +83,8 @@ public class UserFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        places = _MainActivity.getPlaces();
+
         FragmentManager fragmentManager_Search = getActivity().getSupportFragmentManager();
         if (CheckAccount() == 1) {
             fragmentManager_Search
@@ -88,8 +94,7 @@ public class UserFragment extends Fragment {
 
             bAd_Tools.setVisibility(View.VISIBLE);
             bAd_Tools.setOnClickListener(_view -> {
-                Intent adtool = new Intent(_ThisConText, AdminToolsActivity.class);
-                startActivity(adtool);
+                startActivity(new Intent(_ThisConText, AdminToolsActivity.class).putExtra("places", places));
             });
         }
         else if (CheckAccount() == 2) {
@@ -125,6 +130,7 @@ public class UserFragment extends Fragment {
                              Bundle savedInstanceState) {
         _View = inflater.inflate(R.layout.fragment_user, container, false);
         _ThisConText = container.getContext();
+        _MainActivity = (MainActivity) getActivity();
 
         bAd_Tools = _View.findViewById(R.id.bAdmin_Tools);
 
