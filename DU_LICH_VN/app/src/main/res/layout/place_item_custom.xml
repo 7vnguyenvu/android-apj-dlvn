@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    android:gravity="center"
+    tools:ignore="InefficientWeight" >
+
+    <ImageView
+        android:id="@+id/iPlace_Img"
+        android:layout_width="280dp"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:layout_weight="1"
+        android:src="@drawable/ic_image"
+        android:background="@drawable/image_user_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tPlace_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:text="Name of Place" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tPlace_Desc"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="28dp"
+                android:textColor="@color/white"
+                android:text="Place's discription" />
+
+
+            <TextView
+                android:id="@+id/tPlace_Rate"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="28dp"
+                android:textColor="@color/white"
+                android:text="Place's rating" />
+
+
+            <TextView
+                android:id="@+id/tPlace_Pro"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="28dp"
+                android:textColor="@color/white"
+                android:text="Place's province" />
+
+            <TextView
+                android:id="@+id/tPlace_Detail"
+                android:layout_width="match_parent"
+                android:gravity="right|center_vertical"
+                android:layout_height="28dp"
+                android:textColor="@android:color/holo_blue_bright"
+                android:text="Xem địa điểm"
+                android:textStyle="italic"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/activity_detail.xml" value="0.17447916666666666" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/fragment_control.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/fragment_explore.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/fragment_find.xml" value="0.1" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/fragment_user.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/fragment_user__false.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/fragment_user__true.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/location_find.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/layout/lv_of_find.xml" value="0.17447916666666666" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/menu/find_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/DoAnAndroid/doan1/Android_DLVN/DU_LICH_VN/app/src/main/res/menu/main_menu.xml" value="0.1" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/button_background.xml" value="0.1355" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/edittext_background.xml" value="0.1355" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/login_gg_background.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/drawable/tablecontrol_background.xml" value="0.1" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_user.xml" value="0.12771739130434784" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_control.xml" value="0.2359375" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_explore.xml" value="0.1453804347826087" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_find.xml" value="0.1453804347826087" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user.xml" value="0.25" />
+<<<<<<< HEAD
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user__false.xml" value="0.4" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user__true.xml" value="0.264" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/layout/lv_of_find.xml" value="0.25" />
+=======
+>>>>>>> f5820ac2316e2b328f475f149ca771e691ff1d7d
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/BAI_TAP/DE_AN/DU_LICH_VN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/DE_AN/DU_LICH_VN/app/src/main/res/layout/activity_main.xml" value="0.10729166666666666" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_find.xml" value="0.10729166666666666" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user__false.xml" value="0.1331521739130435" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/DE_AN/DU_LICH_VN/app/src/main/res/layout/fragment_user__true.xml" value="0.1" />
+        <entry key="..\:/HOC_KY_V/LAP_TRINH_THIET_BI_DI_DONG/Workspace__DI-DONG/DE_AN/DU_LICH_VN/app/src/main/res/layout/lv_of_find.xml" value="0.10729166666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
