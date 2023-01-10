@@ -25,10 +25,6 @@
         <activity
             android:name=".DetailPlaceActivity"
             android:exported="false" />
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a816bb31acccee2bc3bb43ab02feb47c3fe1477
         <activity
             android:name=".ActionsPlaceActivity"
             android:exported="false" />
@@ -47,11 +43,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a816bb31acccee2bc3bb43ab02feb47c3fe1477
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

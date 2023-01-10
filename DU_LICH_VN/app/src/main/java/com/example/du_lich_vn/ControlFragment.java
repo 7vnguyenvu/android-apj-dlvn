@@ -110,14 +110,12 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
             case R.id.iUser_Ctrl:
 
 
-                String nn = _MainActivity.getNick_name();
-                String un = _MainActivity.getUser_name();
-                String pw = _MainActivity.getPass();
+                Account acc = _MainActivity.getAccount();
 
                 FragmentManager fragmentManager_User = getActivity().getSupportFragmentManager();
                 fragmentManager_User
                         .beginTransaction()
-                        .replace(R.id.PageContainer, UserFragment.newInstance(nn, un, pw))
+                        .replace(R.id.PageContainer, UserFragment.newInstance(acc))
                         .commit();
 
                 iS.getLayoutParams().height = 55;

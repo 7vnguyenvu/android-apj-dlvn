@@ -47,18 +47,10 @@ public class FindFragment extends Fragment  {
             if(fl.getName().toLowerCase().contains(s.toLowerCase()))
                 find.add(fl);
 
-<<<<<<< HEAD
+
         PlaceFindAdapter locationAdapter_Search = new PlaceFindAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,find);
 
         if(!find.isEmpty())
-=======
-        }
-        LocationAdapter locationAdapter_Search = new LocationAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,find);
-        if(find.isEmpty()){
-            Toast.makeText(getActivity().getApplicationContext(), "hihi", Toast.LENGTH_SHORT).show();
-        }
-        else {
->>>>>>> 2a816bb31acccee2bc3bb43ab02feb47c3fe1477
             lv.setAdapter(locationAdapter_Search);
     }
     @Override
@@ -71,11 +63,8 @@ public class FindFragment extends Fragment  {
         lv=view.findViewById(R.id.lvfind);
         arrLocation=_MainActivity.getPlaces();
 
-<<<<<<< HEAD
         PlaceFindAdapter locationAdapter = new PlaceFindAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,arrLocation);
-=======
-        LocationAdapter locationAdapter = new LocationAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,arrLocation);
->>>>>>> 2a816bb31acccee2bc3bb43ab02feb47c3fe1477
+
         lv.setAdapter(locationAdapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

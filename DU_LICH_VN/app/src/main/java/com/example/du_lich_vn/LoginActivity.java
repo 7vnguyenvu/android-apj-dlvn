@@ -110,9 +110,7 @@ public class LoginActivity extends Activity {
         // Skip
         findViewById(R.id.bSkip_Login).setOnClickListener(view -> {
             Intent main = new Intent(LoginActivity.this, MainActivity.class);
-            main.putExtra("nick_name", "");
-            main.putExtra("user_name", "");
-            main.putExtra("pass", "");
+            main.putExtra("Account",new Account());
 
             startActivity(main);
         });
@@ -138,9 +136,13 @@ public class LoginActivity extends Activity {
                         System.out.println("Đã tìm thấy. Con trỏ đang ở đối tượng thứ " + curAccount.getPosition());
 
                         Intent main = new Intent(LoginActivity.this, MainActivity.class);
-                        main.putExtra("nick_name", curAccount.getString(1));
-                        main.putExtra("user_name", curAccount.getString(2));
-                        main.putExtra("pass", curAccount.getString(3));
+                        main.putExtra("Account",
+                                new Account(
+                                        curAccount.getString(0),
+                                        curAccount.getString(1),
+                                        curAccount.getString(2),
+                                        curAccount.getString(3))
+                        );
 
                         startActivity(main);
 
