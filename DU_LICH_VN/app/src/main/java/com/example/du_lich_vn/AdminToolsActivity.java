@@ -13,13 +13,13 @@ import java.util.ArrayList;
 
 public class AdminToolsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ArrayList<Place> places;
+    private Account account;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_tools);
 
-        places = (ArrayList<Place>) getIntent().getSerializableExtra("places");
+        account = (Account) getIntent().getSerializableExtra("Account");
 
         findViewById(R.id.bBack).setOnClickListener(this);
         findViewById(R.id.bAdd_Place).setOnClickListener(this);
@@ -33,14 +33,8 @@ public class AdminToolsActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bBack:
-
-                try {
-                    // Phải load lại ExploreFragment trước khi finish()
-                } catch (Exception ignored) {
-                    System.out.println("Có cái nịt!");
-                }
-
-                finish();
+                startActivity(new Intent(AdminToolsActivity.this, MainActivity.class)
+                        .putExtra("Account", account));
                 break;
 
             case R.id.bAdd_Place:
@@ -48,7 +42,7 @@ public class AdminToolsActivity extends AppCompatActivity implements View.OnClic
                 break;
 
             case R.id.bShow_Places:
-                startActivity(new Intent(AdminToolsActivity.this, ShowPlacesActivity.class).putExtra("places", places ));
+                startActivity(new Intent(AdminToolsActivity.this, ShowPlacesActivity.class));
                 break;
 
             case R.id.bAdd_Account:

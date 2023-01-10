@@ -12,25 +12,17 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
-    private String nick_name, user_name, pass;
+    Account account;
     SQLiteDatabase database;
     Cursor curPlace;
     ArrayList<Place> places = new ArrayList<Place>();
 
-    public String getNick_name() {
-        return nick_name;
+    public Account getAccount() {
+        return account;
     }
 
     public ArrayList<Place> getPlaces() {
         return places;
-    }
-
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public String getPass() {
-        return pass;
     }
 
     @Override
@@ -49,9 +41,7 @@ public class MainActivity extends AppCompatActivity{
 
         } catch (Exception ignored) {}
 
-        nick_name = getIntent().getStringExtra("nick_name");
-        user_name = getIntent().getStringExtra("user_name");
-        pass = getIntent().getStringExtra("pass");
+        account = (Account) getIntent().getSerializableExtra("Account");
 
     }
 }

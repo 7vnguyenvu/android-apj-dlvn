@@ -11,6 +11,12 @@ public class Account implements Serializable {
         this._user = _user;
         this._pass = _pass;
     }
+    public Account() {
+        this._id = "";
+        this._name = "";
+        this._user = "";
+        this._pass = "";
+    }
 
     public String get_id() {
         return _id;

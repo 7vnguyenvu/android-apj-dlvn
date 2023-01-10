@@ -68,6 +68,7 @@
             />
 
         <Button
+            android:id="@+id/bSignout_Login"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="Đăng xuất"
@@ -77,6 +78,7 @@
             android:gravity="left|center_vertical"
             android:background="#00FFFFFF"
             android:paddingHorizontal="20dp"
+            android:visibility="gone"
             />
 
     </LinearLayout>

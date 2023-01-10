@@ -37,8 +37,10 @@ public class UserFragment_False extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         view.findViewById(R.id.bSignin_UserFalse).setOnClickListener(v -> {
-            Intent login = new Intent(UserFragment_False.this.getContext(), LoginActivity.class);
-            startActivity(login);
+            startActivity(new Intent(UserFragment_False.this.getContext(), LoginActivity.class));
+        });
+        view.findViewById(R.id.bSignup_UserFalse).setOnClickListener(v -> {
+            startActivity(new Intent(UserFragment_False.this.getContext(), RegisActivity.class));
         });
     }
 

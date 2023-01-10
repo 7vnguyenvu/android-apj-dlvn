@@ -194,12 +194,10 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
 
             case R.id.bSave_Place:
                 Insert_Place();
-                startActivity(new Intent(ActionsPlaceActivity.this, MainActivity.class));
                 break;
 
             case R.id.bUpdate_Place:
                 Update_Place();
-                startActivity(new Intent(ActionsPlaceActivity.this, MainActivity.class));
                 break;
         }
 

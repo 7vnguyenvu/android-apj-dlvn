@@ -26,47 +26,17 @@ public class UserFragment extends Fragment {
     View _View;
     private MainActivity _MainActivity;
     Context _ThisConText;
-    Button bAd_Tools;
+    Button bAd_Tools, bSignout;
     ArrayList<Place> places = new ArrayList<Place>();
+    Account account;
 
-    public String getUser() {
-        return user;
+    public UserFragment(Account acc) {
+        this.account = acc;
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getNick_name() {
-        return nick_name;
-    }
-
-    public void setNick_name(String nick_name) {
-        this.nick_name = nick_name;
-    }
-
-    private String nick_name;
-    private String user;
-    private String password;
-
-    public UserFragment( String nick_name, String user, String password) {
-        this.setNick_name(nick_name);
-        this.setUser(user);
-        this.setPassword(password);
-    }
-
-    public UserFragment(int contentLayoutId, String user, String password) {
+    public UserFragment(int contentLayoutId, Account acc) {
         super(contentLayoutId);
-        this.user = user;
-        this.password = password;
+        this.account = acc;
     }
 
 
@@ -74,8 +44,8 @@ public class UserFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static UserFragment newInstance(String nick_name, String user, String pass) {
-        UserFragment fragment = new UserFragment(nick_name, user, pass);
+    public static UserFragment newInstance(Account acc) {
+        UserFragment fragment = new UserFragment(acc);
         return fragment;
     }
 
@@ -89,19 +59,19 @@ public class UserFragment extends Fragment {
         if (CheckAccount() == 1) {
             fragmentManager_Search
                     .beginTransaction()
-                    .replace(R.id.UserContainer, UserFragment_True.newInstance(1, getNick_name()))
+                    .replace(R.id.UserContainer, UserFragment_True.newInstance(1, account.get_name()))
                     .commit();
 
             bAd_Tools.setVisibility(View.VISIBLE);
-            bAd_Tools.setOnClickListener(_view -> {
-                startActivity(new Intent(_ThisConText, AdminToolsActivity.class).putExtra("places", places));
-            });
+            bSignout.setVisibility(View.VISIBLE);
         }
         else if (CheckAccount() == 2) {
             fragmentManager_Search
                     .beginTransaction()
-                    .replace(R.id.UserContainer, UserFragment_True.newInstance(2, getNick_name()))
+                    .replace(R.id.UserContainer, UserFragment_True.newInstance(2, account.get_name()))
                     .commit();
+
+            bSignout.setVisibility(View.VISIBLE);
         }
         else {
             fragmentManager_Search
@@ -109,13 +79,23 @@ public class UserFragment extends Fragment {
                     .replace(R.id.UserContainer, UserFragment_False.newInstance())
                     .commit();
         }
+
+        bAd_Tools.setOnClickListener(_view -> {
+            startActivity(new Intent(_ThisConText, AdminToolsActivity.class)
+                    .putExtra("Account", account));
+        });
+
+        bSignout.setOnClickListener(_view -> {
+            startActivity(new Intent(_ThisConText, LoginActivity.class));
+        });
+
     }
 
     public int CheckAccount() {
 
-        if ((getUser().equals("7V_Admin") && getPassword().equals("Admin_depzai")) || (getUser().equals("HT_Admin") && getPassword().equals("Admin_depzai")))
+        if ((account.get_user().equals("7V_Admin") && account.get_pass().equals("Admin_depzai")) || (account.get_user().equals("HT_Admin") && account.get_pass().equals("Admin_depzai")))
             return 1;
-        if (!(getUser().equals("") && getPassword().equals("")))
+        if (!(account.get_user().equals("") && account.get_pass().equals("")))
             return 2;
         return 0;
     }
@@ -133,6 +113,7 @@ public class UserFragment extends Fragment {
         _MainActivity = (MainActivity) getActivity();
 
         bAd_Tools = _View.findViewById(R.id.bAdmin_Tools);
+        bSignout = _View.findViewById(R.id.bSignout_Login);
 
         return _View;
     }
