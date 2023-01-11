@@ -2,24 +2,20 @@ package com.example.du_lich_vn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.accounts.AccountAuthenticatorActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import java.util.ArrayList;
+public class Activity_AdminTools extends AppCompatActivity implements View.OnClickListener {
 
-public class AdminToolsActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private Account account;
+    private Class_Account classAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_tools);
 
-        account = (Account) getIntent().getSerializableExtra("Account");
+        classAccount = (Class_Account) getIntent().getSerializableExtra("Class_Account");
 
         findViewById(R.id.bBack).setOnClickListener(this);
         findViewById(R.id.bAdd_Place).setOnClickListener(this);
@@ -33,22 +29,24 @@ public class AdminToolsActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bBack:
-                startActivity(new Intent(AdminToolsActivity.this, MainActivity.class)
-                        .putExtra("Account", account));
+                startActivity(new Intent(Activity_AdminTools.this, Activity_Main.class)
+                        .putExtra("Class_Account", classAccount));
                 break;
 
             case R.id.bAdd_Place:
-                startActivity(new Intent(AdminToolsActivity.this, ActionsPlaceActivity.class));
+                startActivity(new Intent(Activity_AdminTools.this, Activity_ActionsPlace.class));
                 break;
 
             case R.id.bShow_Places:
-                startActivity(new Intent(AdminToolsActivity.this, ShowPlacesActivity.class));
+                startActivity(new Intent(Activity_AdminTools.this, Activity_ShowPlaces.class));
                 break;
 
             case R.id.bAdd_Account:
+                startActivity(new Intent(Activity_AdminTools.this, Activity_ActionsAccount.class));
                 break;
 
             case R.id.bShow_Accounts:
+                startActivity(new Intent(Activity_AdminTools.this, Activity_ShowAccounts.class));
                 break;
         }
     }

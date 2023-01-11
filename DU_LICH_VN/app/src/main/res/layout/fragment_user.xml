@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UserFragment">
+    tools:context=".Fragment_User">
 
 
     <LinearLayout
@@ -29,6 +29,7 @@
         android:padding="12dp">
 
         <Button
+            android:id="@+id/bDetail_User"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="Thông tin chi tiết"
@@ -38,6 +39,7 @@
             android:gravity="left|center_vertical"
             android:background="#00FFFFFF"
             android:paddingHorizontal="20dp"
+            android:visibility="gone"
             />
 
 
@@ -65,6 +67,7 @@
             android:gravity="left|center_vertical"
             android:background="#00FFFFFF"
             android:paddingHorizontal="20dp"
+            android:visibility="gone"
             />
 
         <Button

@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 
 import java.util.Random;
 
-public class RegisActivity extends Activity implements View.OnClickListener {
+public class Activity_Regis extends Activity implements View.OnClickListener {
     EditText eName, eUser,ePass;
     Button bHuy,bLuu;
     SQLiteDatabase database;
@@ -48,6 +48,7 @@ public class RegisActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btnHuy:
                 xoaTrang();
+                finish();
                 break;
             case R.id.btnDangKy:
                 if (eName.getText().toString().trim().equals(""))
@@ -71,7 +72,7 @@ public class RegisActivity extends Activity implements View.OnClickListener {
                                 msg = "Thêm mới tài khoản thành công";
                             Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
                             xoaTrang();
-                            startActivity(new Intent(RegisActivity.this,LoginActivity.class));
+                            startActivity(new Intent(Activity_Regis.this, Activity_Login.class));
                             break;
                         }catch (Exception exception){
 

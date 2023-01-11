@@ -14,24 +14,24 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class FindFragment extends Fragment  {
+public class Fragment_Find extends Fragment  {
 
-    public FindFragment() {
+    public Fragment_Find() {
         // Required empty public constructor
     }
 
-    public static FindFragment newInstance() {
-        return new FindFragment();
+    public static Fragment_Find newInstance() {
+        return new Fragment_Find();
     }
     ListView lv;
     View view;
-    private MainActivity _MainActivity;
+    private Activity_Main _ActivityMain;
     Context _ThisContext;
-    ArrayList<Place> arrLocation=new ArrayList<Place>();
+    ArrayList<Class_Place> arrLocation=new ArrayList<Class_Place>();
+    ArrayList<Class_Place> find= new ArrayList<>();
     private SearchView searchView;
 
     @Override
@@ -42,12 +42,12 @@ public class FindFragment extends Fragment  {
     }
 
     private void mysearch(String s) {
-        ArrayList<Place> find= new ArrayList<>();
-        for (Place fl:arrLocation)
+        find.clear();
+        for (Class_Place fl:arrLocation)
             if(fl.getName().toLowerCase().contains(s.toLowerCase()))
                 find.add(fl);
 
-        PlaceFindAdapter locationAdapter_Search = new PlaceFindAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,find);
+        Adapter_PlaceFind locationAdapter_Search = new Adapter_PlaceFind(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,find);
 
         if(!find.isEmpty())
             lv.setAdapter(locationAdapter_Search);
@@ -60,18 +60,18 @@ public class FindFragment extends Fragment  {
         searchView.clearFocus();
 
         lv=view.findViewById(R.id.lvfind);
-        arrLocation=_MainActivity.getPlaces();
+        arrLocation= _ActivityMain.getPlaces();
 
-        PlaceFindAdapter locationAdapter = new PlaceFindAdapter(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,arrLocation);
+        Adapter_PlaceFind locationAdapter = new Adapter_PlaceFind(getActivity().getApplicationContext(),R.layout.place_item_of_find_custom,arrLocation);
 
         lv.setAdapter(locationAdapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent detail_place = new Intent(_ThisContext, DetailPlaceActivity.class);
+                Intent detail_place = new Intent(_ThisContext, Activity_DetailPlace.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("place", arrLocation.get(i));
+                bundle.putSerializable("classPlace", find.get(i));
                 detail_place.putExtra("bundle", bundle);
                 startActivity(detail_place);
             }
@@ -96,7 +96,7 @@ public class FindFragment extends Fragment  {
                              Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_find, container, false);
         _ThisContext = container.getContext();
-        _MainActivity = (MainActivity) getActivity();
+        _ActivityMain = (Activity_Main) getActivity();
         return view;
 
     }

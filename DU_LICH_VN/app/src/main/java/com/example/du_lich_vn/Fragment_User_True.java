@@ -14,10 +14,10 @@ import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link UserFragment_True#newInstance} factory method to
+ * Use the {@link Fragment_User_True#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserFragment_True extends Fragment {
+public class Fragment_User_True extends Fragment {
 
     int admin = 0;
     String user_name;
@@ -26,13 +26,13 @@ public class UserFragment_True extends Fragment {
     TextView tUser_Name, tUser_Disc;
 
 
-    public UserFragment_True(int num, String name) {
+    public Fragment_User_True(int num, String name) {
         admin = num;
         user_name = name;
     }
 
-    public static UserFragment_True newInstance(int num, String name ) {
-        UserFragment_True fragment = new UserFragment_True(num, name);
+    public static Fragment_User_True newInstance(int num, String name ) {
+        Fragment_User_True fragment = new Fragment_User_True(num, name);
         return fragment;
     }
 

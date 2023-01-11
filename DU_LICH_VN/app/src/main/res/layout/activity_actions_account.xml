@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Action Place"
+        android:text="Action Account"
         android:textSize="32sp"
         android:textStyle="bold"
         android:fontFamily="@font/tradewinds"
@@ -36,12 +36,12 @@
             />
 
         <EditText
-            android:id="@+id/ePlace_Code"
+            android:id="@+id/eAccount_Code"
             android:layout_weight="1"
             android:layout_height="40dp"
             android:background="@drawable/edittext_background"
             android:paddingHorizontal="20dp"
-            android:hint="Mã định danh... (Not required)"
+            android:hint="Mã định danh..."
             android:textSize="16sp"
             android:textColor="#68838383"
             android:textColorHint="#68838383"
@@ -61,21 +61,70 @@
             />
 
         <EditText
-            android:id="@+id/ePlace_Name"
+            android:id="@+id/eAccount_Name"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_background"
+            android:hint="Tên người dùng..."
+            android:paddingHorizontal="20dp"
+            android:textColor="#fff"
+            android:textColorHint="#68FFFFFF"
+            android:textSize="16sp" />
+
+    </TableRow>
+
+    <TableRow android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="User:"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/eAccount_User"
             android:layout_weight="1"
             android:layout_height="40dp"
             android:background="@drawable/edittext_background"
             android:paddingHorizontal="20dp"
-            android:hint="Tên địa điểm... (Required)"
+            android:hint="Tên đăng nhập..."
             android:textSize="16sp"
             android:textColor="#fff"
             android:textColorHint="#68FFFFFF"/>
 
     </TableRow>
 
+
+    <TableRow android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:text="Password:"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/eAccount_Pass"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_background"
+            android:hint="Mật khẩu..."
+            android:paddingHorizontal="20dp"
+            android:textColor="#fff"
+            android:textColorHint="#68FFFFFF"
+            android:textSize="16sp" />
+
+    </TableRow>
+
     <TableRow
         android:layout_marginTop="12dp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="100dp"
@@ -87,136 +136,16 @@
             />
 
         <Button
-            android:id="@+id/bPlace_Img"
+            android:id="@+id/bAccount_Img"
             android:layout_weight="1"
             android:layout_height="40dp"
             android:background="@drawable/edittext_background"
             android:paddingHorizontal="20dp"
-            android:hint="Hình ảnh... (Required)"
+            android:hint="Hình ảnh... "
             android:textSize="16sp"
             android:textColor="#fff"
             android:textColorHint="#68FFFFFF"
             android:gravity="left|center_vertical" />
-
-    </TableRow>
-
-    <TableRow android:layout_marginTop="12dp">
-
-        <TextView
-            android:layout_width="100dp"
-            android:text="Description:"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:id="@+id/ePlace_Desc"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_background"
-            android:paddingHorizontal="20dp"
-            android:hint="Mô tả... (Required)"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:textColorHint="#68FFFFFF"/>
-
-    </TableRow>
-
-    <TableRow android:layout_marginTop="12dp">
-
-        <TextView
-            android:layout_width="100dp"
-            android:text="Rating:"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:id="@+id/ePlace_Rate"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_background"
-            android:paddingHorizontal="20dp"
-            android:hint="Đánh giá... (Required)"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:textColorHint="#68FFFFFF"/>
-
-    </TableRow>
-
-    <TableRow android:layout_marginTop="12dp">
-
-        <TextView
-            android:layout_width="100dp"
-            android:text="Province:"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:id="@+id/ePlace_Pro"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_background"
-            android:paddingHorizontal="20dp"
-            android:hint="Tỉnh thành... (Required)"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:textColorHint="#68FFFFFF"/>
-
-    </TableRow>
-
-    <TableRow android:layout_marginTop="12dp">
-
-        <TextView
-            android:layout_width="100dp"
-            android:text="Position:"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:id="@+id/ePlace_Pos"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_background"
-            android:paddingHorizontal="20dp"
-            android:hint="Vị trí bản đồ... (Required)"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:textColorHint="#68FFFFFF"/>
-
-    </TableRow>
-
-    <TableRow android:layout_marginTop="12dp">
-
-        <TextView
-            android:layout_width="100dp"
-            android:text="Link map:"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:id="@+id/ePlace_Link"
-            android:layout_weight="1"
-            android:layout_height="40dp"
-            android:background="@drawable/edittext_background"
-            android:paddingHorizontal="20dp"
-            android:hint="Link... (Required)"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:textColorHint="#68FFFFFF"/>
 
     </TableRow>
 
@@ -227,7 +156,7 @@
         android:gravity="right">
 
         <Button
-            android:id="@+id/bClear_Place_ActionForm"
+            android:id="@+id/bClear_Account_ActionForm"
             android:layout_width="70dp"
             android:layout_height="20dp"
             android:background="@drawable/button_background"
@@ -258,7 +187,7 @@
             android:layout_weight="1"
             android:layout_height="40dp"
             android:layout_marginHorizontal="8dp"
-            android:id="@+id/bSave_Place"
+            android:id="@+id/bSave_Account"
             android:text="Save"
             android:textAllCaps="false"
             android:textColor="#1AB000"
@@ -272,7 +201,7 @@
             android:layout_weight="1"
             android:layout_height="40dp"
             android:layout_marginHorizontal="8dp"
-            android:id="@+id/bUpdate_Place"
+            android:id="@+id/bUpdate_Account"
             android:text="Update"
             android:textAllCaps="false"
             android:textColor="#9200EC"
@@ -293,7 +222,7 @@
         android:layout_height="40dp"
         android:layout_marginHorizontal="8dp"
         android:layout_marginBottom="10dp"
-        android:id="@+id/bBackToAdminTools_ActionPlaces"
+        android:id="@+id/bBackToAdminTools_ActionAccounts"
         android:text="Trở về"
         android:textAllCaps="false"
         android:textColor="@color/design_default_color_error"

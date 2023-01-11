@@ -4,22 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
+public class Activity_DetailPlace extends AppCompatActivity {
 
-public class DetailPlaceActivity extends AppCompatActivity {
-
-    Place place;
+    Class_Place classPlace;
 
     ImageView iImg;
     TextView tName, tDesc, tRate, tProv;
@@ -30,7 +24,7 @@ public class DetailPlaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_place);
 
-        place = (Place) getIntent().getBundleExtra("bundle").getSerializable("place");
+        classPlace = (Class_Place) getIntent().getBundleExtra("bundle").getSerializable("classPlace");
 
 
         iImg = findViewById(R.id.iDetail_Img);
@@ -39,21 +33,21 @@ public class DetailPlaceActivity extends AppCompatActivity {
         tRate = findViewById(R.id.tDetail_Rate);
         tProv = findViewById(R.id.tDetail_Prov);
 
-        iImg.setImageResource(place.getImage());
-        tName.setText(place.getName());
-        tDesc.setText(place.getDescription());
-        tRate.setText(place.getRating());
-        tProv.setText(place.getProvince());
+        iImg.setImageResource(classPlace.getImage());
+        tName.setText(classPlace.getName());
+        tDesc.setText(classPlace.getDescription());
+        tRate.setText(classPlace.getRating());
+        tProv.setText(classPlace.getProvince());
 
         WebView wMap=findViewById(R.id.wMap);
 
-        wMap.loadUrl(place.getLink());
+        wMap.loadUrl(classPlace.getLink());
         wMap.getSettings().setJavaScriptEnabled(true);
         wMap.setWebViewClient(new WebViewClient());
 
         findViewById(R.id.bDetail_Link).setOnClickListener(view -> {
             Intent link = new Intent(Intent.ACTION_VIEW);
-            link.setData(Uri.parse(place.getLink()));
+            link.setData(Uri.parse(classPlace.getLink()));
             startActivity(link);
         });
     }

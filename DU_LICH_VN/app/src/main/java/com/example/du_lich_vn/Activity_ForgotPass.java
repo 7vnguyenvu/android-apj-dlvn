@@ -15,13 +15,13 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class ForgotPassActivity extends Activity implements View.OnClickListener{
+public class Activity_ForgotPass extends Activity implements View.OnClickListener{
     EditText eUser;
     Button bHuy,bHienThiPass;
     SQLiteDatabase database;
 
     Cursor curAccount;
-    ArrayList<Account> accounts;
+    ArrayList<Class_Account> classAccounts;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class ForgotPassActivity extends Activity implements View.OnClickListener
         bHienThiPass=findViewById(R.id.btnlayPass_Forgotpass);
         bHuy.setOnClickListener(this);
         bHienThiPass.setOnClickListener(this);
-        accounts= (ArrayList<Account>) getIntent().getSerializableExtra("account");
+        classAccounts = (ArrayList<Class_Account>) getIntent().getSerializableExtra("Class_Account");
 
     }
 
@@ -40,6 +40,7 @@ public class ForgotPassActivity extends Activity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.btnHuy_Forgotpass:
                 xoaTrang();
+                finish();
                 break;
             case R.id.btnlayPass_Forgotpass:
                 if (eUser.getText().toString().trim().equals(""))
@@ -48,15 +49,15 @@ public class ForgotPassActivity extends Activity implements View.OnClickListener
 
                     String mss = "";
 
-                    //Toast.makeText(this, accounts.size(), Toast.LENGTH_SHORT).show();
-                    System.out.println(accounts.size());
+                    //Toast.makeText(this, classAccounts.size(), Toast.LENGTH_SHORT).show();
+                    System.out.println(classAccounts.size());
 
-                    for(int i=0;i<accounts.size();i++){
+                    for(int i = 0; i< classAccounts.size(); i++){
 
-                        System.out.println(accounts.get(i).get_name());
-                        if (eUser.getText().toString().trim().equals(accounts.get(i).get_user())){
-                            mss = accounts.get(i).get_pass();
-                            System.out.println(accounts.get(i).get_pass());
+                        System.out.println(classAccounts.get(i).get_name());
+                        if (eUser.getText().toString().trim().equals(classAccounts.get(i).get_user())){
+                            mss = classAccounts.get(i).get_pass();
+                            System.out.println(classAccounts.get(i).get_pass());
                             break;
                         }
                     }

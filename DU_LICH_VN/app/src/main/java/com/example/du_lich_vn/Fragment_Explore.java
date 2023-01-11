@@ -16,20 +16,20 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class ExploreFragment extends Fragment {
+public class Fragment_Explore extends Fragment {
 
     Context _ThisContext;
     View _View;
 
     ListView lPlaces;
-    ArrayList<Place> places;
-    private MainActivity _MainActivity;
+    ArrayList<Class_Place> classPlaces;
+    private Activity_Main _ActivityMain;
 
-    public ExploreFragment() {
+    public Fragment_Explore() {
     }
 
-    public static ExploreFragment newInstance() {
-        ExploreFragment fragment = new ExploreFragment();
+    public static Fragment_Explore newInstance() {
+        Fragment_Explore fragment = new Fragment_Explore();
         return fragment;
     }
 
@@ -43,17 +43,17 @@ public class ExploreFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         lPlaces = view.findViewById(R.id.lPlaces);
-        places = _MainActivity.getPlaces();
+        classPlaces = _ActivityMain.getPlaces();
 
-        PlaceExploreAdapter placeAdapter = new PlaceExploreAdapter(_ThisContext, R.layout.place_item_of_explore_custom, places);
+        Adapter_PlaceExplore placeAdapter = new Adapter_PlaceExplore(_ThisContext, R.layout.place_item_of_explore_custom, classPlaces);
         lPlaces.setAdapter(placeAdapter);
 
         lPlaces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent detail_place = new Intent(_ThisContext, DetailPlaceActivity.class);
+                Intent detail_place = new Intent(_ThisContext, Activity_DetailPlace.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("place", places.get(i));
+                bundle.putSerializable("classPlace", classPlaces.get(i));
                 detail_place.putExtra("bundle", bundle);
                 startActivity(detail_place);
             }
@@ -69,7 +69,7 @@ public class ExploreFragment extends Fragment {
                              Bundle savedInstanceState) {
         _View = inflater.inflate(R.layout.fragment_explore, container, false);
         _ThisContext = container.getContext();
-        _MainActivity = (MainActivity) getActivity();
+        _ActivityMain = (Activity_Main) getActivity();
 
 
 

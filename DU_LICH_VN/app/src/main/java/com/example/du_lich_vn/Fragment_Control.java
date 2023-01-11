@@ -1,46 +1,38 @@
 package com.example.du_lich_vn;
 
-import static android.content.Context.MODE_PRIVATE;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.File;
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ControlFragment#newInstance} factory method to
+ * Use the {@link Fragment_Control#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ControlFragment extends Fragment implements View.OnClickListener {
+public class Fragment_Control extends Fragment implements View.OnClickListener {
 
     Context _ThisContext;
     View _View;
-    private MainActivity _MainActivity;
+    private Activity_Main _ActivityMain;
 
-    public ControlFragment() {
+    public Fragment_Control() {
         // Required empty public constructor
     }
 
-    public static ControlFragment newInstance() {
-        return new ControlFragment();
+    public static Fragment_Control newInstance() {
+        return new Fragment_Control();
     }
 
 
@@ -69,7 +61,7 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
         FragmentManager fragmentManager_Explore = getActivity().getSupportFragmentManager();
         fragmentManager_Explore
                 .beginTransaction()
-                .replace(R.id.PageContainer, ExploreFragment.newInstance())
+                .replace(R.id.PageContainer, Fragment_Explore.newInstance())
                 .commit();
     }
 
@@ -82,7 +74,7 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
                 FragmentManager fragmentManager_Search = getActivity().getSupportFragmentManager();
                 fragmentManager_Search
                         .beginTransaction()
-                        .replace(R.id.PageContainer, FindFragment.newInstance())
+                        .replace(R.id.PageContainer, Fragment_Find.newInstance())
                         .commit();
 
                 iS.getLayoutParams().height = 100;
@@ -98,7 +90,7 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
                 FragmentManager fragmentManager_Explore = getActivity().getSupportFragmentManager();
                 fragmentManager_Explore
                         .beginTransaction()
-                        .replace(R.id.PageContainer, ExploreFragment.newInstance())
+                        .replace(R.id.PageContainer, Fragment_Explore.newInstance())
                         .commit();
 
                 iS.getLayoutParams().height = 55;
@@ -110,12 +102,12 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
             case R.id.iUser_Ctrl:
 
 
-                Account acc = _MainActivity.getAccount();
+                Class_Account acc = _ActivityMain.getAccount();
 
                 FragmentManager fragmentManager_User = getActivity().getSupportFragmentManager();
                 fragmentManager_User
                         .beginTransaction()
-                        .replace(R.id.PageContainer, UserFragment.newInstance(acc))
+                        .replace(R.id.PageContainer, Fragment_User.newInstance(acc))
                         .commit();
 
                 iS.getLayoutParams().height = 55;
@@ -131,7 +123,9 @@ public class ControlFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         _View = inflater.inflate(R.layout.fragment_control, container, false);
-        _MainActivity = (MainActivity) getActivity();
+        _ActivityMain = (Activity_Main) getActivity();
+
+
         return _View;
     }
 }

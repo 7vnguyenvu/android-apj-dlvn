@@ -2,16 +2,16 @@ package com.example.du_lich_vn;
 
 import java.io.Serializable;
 
-public class Account implements Serializable {
+public class Class_Account implements Serializable {
     String _id,_name,_user,_pass;
 
-    public Account(String _id, String _name, String _user, String _pass) {
+    public Class_Account(String _id, String _name, String _user, String _pass) {
         this._id = _id;
         this._name = _name;
         this._user = _user;
         this._pass = _pass;
     }
-    public Account() {
+    public Class_Account() {
         this._id = "";
         this._name = "";
         this._user = "";

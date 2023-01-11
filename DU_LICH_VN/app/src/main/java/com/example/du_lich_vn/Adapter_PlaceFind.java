@@ -1,6 +1,5 @@
 package com.example.du_lich_vn;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,16 +10,15 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-public class PlaceFindAdapter extends ArrayAdapter<Place> {
+public class Adapter_PlaceFind extends ArrayAdapter<Class_Place> {
     private Context contxt;
-    private ArrayList<Place> arr;
+    private ArrayList<Class_Place> arr;
     private int res;
 
-    public PlaceFindAdapter(@NonNull Context context, int resour, ArrayList<Place> ArrLocation) {
+    public Adapter_PlaceFind(@NonNull Context context, int resour, ArrayList<Class_Place> ArrLocation) {
         super(context,resour,ArrLocation);
         contxt=context;
         arr=ArrLocation;

@@ -1,7 +1,5 @@
 package com.example.du_lich_vn;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,19 +8,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity{
+public class Activity_Main extends AppCompatActivity{
 
-    Account account;
+    Class_Account classAccount;
     SQLiteDatabase database;
     Cursor curPlace;
-    ArrayList<Place> places = new ArrayList<Place>();
+    ArrayList<Class_Place> classPlaces = new ArrayList<Class_Place>();
 
-    public Account getAccount() {
-        return account;
+    public Class_Account getAccount() {
+        return classAccount;
     }
 
-    public ArrayList<Place> getPlaces() {
-        return places;
+    public ArrayList<Class_Place> getPlaces() {
+        return classPlaces;
     }
 
     @Override
@@ -36,12 +34,12 @@ public class MainActivity extends AppCompatActivity{
             curPlace = database.query("PLACES", null, null, null, null, null, null);
             curPlace.moveToFirst();
             do {
-                places.add(new Place(Integer.parseInt(curPlace.getString(6)), curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5), curPlace.getString(7), curPlace.getString(0)));
+                classPlaces.add(new Class_Place(Integer.parseInt(curPlace.getString(6)), curPlace.getString(1), curPlace.getString(2), curPlace.getString(3), curPlace.getString(4), curPlace.getString(5), curPlace.getString(7), curPlace.getString(0)));
             } while (curPlace.moveToNext());
 
         } catch (Exception ignored) {}
 
-        account = (Account) getIntent().getSerializableExtra("Account");
+        classAccount = (Class_Account) getIntent().getSerializableExtra("Class_Account");
 
     }
 }

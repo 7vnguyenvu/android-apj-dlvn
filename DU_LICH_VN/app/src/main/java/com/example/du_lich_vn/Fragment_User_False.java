@@ -13,17 +13,17 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link UserFragment_False#newInstance} factory method to
+ * Use the {@link Fragment_User_False#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserFragment_False extends Fragment {
+public class Fragment_User_False extends Fragment {
 
-    public UserFragment_False() {
+    public Fragment_User_False() {
         // Required empty public constructor
     }
 
-    public static UserFragment_False newInstance() {
-        UserFragment_False fragment = new UserFragment_False();
+    public static Fragment_User_False newInstance() {
+        Fragment_User_False fragment = new Fragment_User_False();
         return fragment;
     }
 
@@ -37,10 +37,10 @@ public class UserFragment_False extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         view.findViewById(R.id.bSignin_UserFalse).setOnClickListener(v -> {
-            startActivity(new Intent(UserFragment_False.this.getContext(), LoginActivity.class));
+            startActivity(new Intent(Fragment_User_False.this.getContext(), Activity_Login.class));
         });
         view.findViewById(R.id.bSignup_UserFalse).setOnClickListener(v -> {
-            startActivity(new Intent(UserFragment_False.this.getContext(), RegisActivity.class));
+            startActivity(new Intent(Fragment_User_False.this.getContext(), Activity_Regis.class));
         });
     }
 

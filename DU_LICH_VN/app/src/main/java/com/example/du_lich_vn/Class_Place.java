@@ -2,7 +2,7 @@ package com.example.du_lich_vn;
 
 import java.io.Serializable;
 
-public class Place implements Serializable {
+public class Class_Place implements Serializable {
     private int image;
     private String code;
     private String name;
@@ -78,7 +78,7 @@ public class Place implements Serializable {
         this.rating = rating;
     }
 
-    public Place(int image, String name, String description, String rating, String province, String position, String link, String code) {
+    public Class_Place(int image, String name, String description, String rating, String province, String position, String link, String code) {
         this.image = image;
         this.name = name;
         this.description = description;

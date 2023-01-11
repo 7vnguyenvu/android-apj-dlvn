@@ -1,7 +1,6 @@
 package com.example.du_lich_vn;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.viewmodel.CreationExtras;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -10,16 +9,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
-public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnClickListener {
+public class Activity_ActionsPlace extends AppCompatActivity  implements View.OnClickListener {
 
     final int RC_IMG = 111;
     final int CODE_UPDATE = 444;
@@ -27,7 +22,7 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
     SQLiteDatabase database;
     EditText eID, eName, eDesc, eRate, eProv, ePos, eLink;
     Button bImg, bSave, bUpdate, bClear;
-    Place place;
+    Class_Place classPlace;
 
 
     @Override
@@ -42,10 +37,11 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
         eProv = findViewById(R.id.ePlace_Pro);
         ePos = findViewById(R.id.ePlace_Pos);
         eLink = findViewById(R.id.ePlace_Link);
+
         bImg = findViewById(R.id.bPlace_Img);
         bSave = findViewById(R.id.bSave_Place);
         bUpdate = findViewById(R.id.bUpdate_Place);
-        bClear = findViewById(R.id.bClear_ActionForm);
+        bClear = findViewById(R.id.bClear_Place_ActionForm);
 
         ePos.addTextChangedListener(new TextWatcher() {
             @Override
@@ -66,10 +62,10 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
         });
 
         bImg.setOnClickListener(this);
-        bClear.setOnClickListener(this);
         bSave.setOnClickListener(this);
         bUpdate.setOnClickListener(this);
-        findViewById(R.id.bBackToAdminTools).setOnClickListener(this);
+        bClear.setOnClickListener(this);
+        findViewById(R.id.bBackToAdminTools_ActionPlaces).setOnClickListener(this);
 
 
         // Update
@@ -78,15 +74,15 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
             bSave.setEnabled(false);
             bClear.setVisibility(View.GONE);
 
-            place = (Place) getIntent().getBundleExtra("bundle").getSerializable("place");
+            classPlace = (Class_Place) getIntent().getBundleExtra("bundle").getSerializable("classPlace");
 
-            eID.setText(place.getCode());
-            eName.setText(place.getName());
-            eDesc.setText(place.getDescription());
-            eRate.setText(place.getRating());
-            eProv.setText(place.getProvince());
-            ePos.setText(place.getPosition());
-            eLink.setText(place.getLink());
+            eID.setText(classPlace.getCode());
+            eName.setText(classPlace.getName());
+            eDesc.setText(classPlace.getDescription());
+            eRate.setText(classPlace.getRating());
+            eProv.setText(classPlace.getProvince());
+            ePos.setText(classPlace.getPosition());
+            eLink.setText(classPlace.getLink());
         }
     }
 
@@ -130,7 +126,7 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
             values.put("RATING", eRate.getText().toString());
             values.put("PROVINCE", eProv.getText().toString());
             values.put("POSITION", ePos.getText().toString());
-            values.put("IMAGE", "1111111111");
+            values.put("IMAGE", R.drawable.ic_image);
             values.put("LINK", eLink.getText().toString());
 
             if (database.insert("PLACES", null, values) == -1){
@@ -154,10 +150,10 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
             values.put("RATING", eRate.getText().toString());
             values.put("PROVINCE", eProv.getText().toString());
             values.put("POSITION", ePos.getText().toString());
-            values.put("IMAGE", place.getImage());
+            values.put("IMAGE", classPlace.getImage());
             values.put("LINK", eLink.getText().toString());
 
-            if (database.update("PLACES", values, "PLACE_CODE=?", new String[] { place.getCode() }) == 0){
+            if (database.update("PLACES", values, "PLACE_CODE=?", new String[] { classPlace.getCode() }) == 0){
                 Toast.makeText(this, "Cập nhật thất bại! Trùng khóa chính.", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
@@ -177,29 +173,34 @@ public class ActionsPlaceActivity extends AppCompatActivity  implements View.OnC
 
                 break;
 
-            case R.id.bBackToAdminTools:
+            case R.id.bBackToAdminTools_ActionPlaces:
                 finish();
                 break;
 
-            case R.id.bClear_ActionForm:
-                eID.setText("");
-                eName.setText("");
-                eDesc.setText("");
-                eRate.setText("");
-                eProv.setText("");
-                ePos.setText("");
-                eLink.setText("");
-                eName.requestFocus();
+            case R.id.bClear_Place_ActionForm:
+                ClearForm();
                 break;
 
             case R.id.bSave_Place:
                 Insert_Place();
+                ClearForm();
                 break;
 
             case R.id.bUpdate_Place:
                 Update_Place();
+                finish();
                 break;
         }
+    }
 
+    public void ClearForm() {
+        eID.setText("");
+        eName.setText("");
+        eDesc.setText("");
+        eRate.setText("");
+        eProv.setText("");
+        ePos.setText("");
+        eLink.setText("");
+        eName.requestFocus();
     }
 }
