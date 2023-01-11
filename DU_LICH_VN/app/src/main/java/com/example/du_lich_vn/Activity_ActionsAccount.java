@@ -19,7 +19,7 @@ import java.util.Random;
 public class Activity_ActionsAccount extends AppCompatActivity implements View.OnClickListener {
 
     final int CODE_UPDATE = 444;
-    final int random = new Random().nextInt(900) + 100;
+    int random = new Random().nextInt(900) + 100;
 
     SQLiteDatabase database;
 

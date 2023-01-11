@@ -12,13 +12,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="33a8a8de-912c-49e9-a609-eee66b37449e" name="Changes" comment="" />
+=======
+    <list default="true" id="33a8a8de-912c-49e9-a609-eee66b37449e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> e36bc04c26f1d39f70c8ce5389b5b721e8bd1e37
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Vu\.android\avd\Pixel_5_API_25.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\nt091\.android\avd\Pixel_5_API_25.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -77,7 +83,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -85,8 +91,8 @@
       <recent name="com.example.du_lich_vn" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="Z:\HOC_KY_V\LAP_TRINH_THIET_BI_DI_DONG\Workspace__DI-DONG\DE_AN\DU_LICH_VN\app\src\main\res\drawable-xxhdpi" />
       <recent name="D:\DoAnAndroid\doan2\Android_DLVN\DU_LICH_VN\app\src\main\res\layout" />
+      <recent name="Z:\HOC_KY_V\LAP_TRINH_THIET_BI_DI_DONG\Workspace__DI-DONG\DE_AN\DU_LICH_VN\app\src\main\res\drawable-xxhdpi" />
     </key>
     <key name="android.template.-1505784193">
       <recent name="com.example.du_lich_vn" />
@@ -100,16 +106,13 @@
     <key name="android.template.1262782845">
       <recent name="com.example.du_lich_vn" />
     </key>
-    <key name="android.template.1788146890">
-      <recent name="com.example.du_lich_vn" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.du_lich_vn" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="DU_LICH_VN.app" />
+      <module name="DU_LICH_VN.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
